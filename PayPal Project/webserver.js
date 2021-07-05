@@ -20,6 +20,11 @@ const server = http.createServer(function(req, res)
         content_type = 'image/png';
         writePage(res, req.url, content_type);
     }
+    else if(req.url.indexOf(".js") !== -1)
+    {
+        content_type = 'text/javascript';
+        writePage(res, req.url, content_type);
+    }
 });
 
 function writePage(res, file, content_type)
