@@ -1,43 +1,53 @@
 <html>
+
 <head>
     <style>
-        h1 {text-align: center; color:blue}
-        p {text-align: center;}
+        h1 {
+            text-align: center;
+            color: blue
+        }
+
+        p {
+            text-align: center;
+        }
+
         /*div {text-align: center;}*/
-        select {font-size: 20;   }
-        #textarea 
-        {
-            display: flex; justify-content: center;
+        select {
+            font-size: 20;
         }
-   
-        textarea 
-        {
+
+        #textarea {
+            display: flex;
+            justify-content: center;
+        }
+
+        textarea {
             width: 420px;
-            height:120;
+            height: 120;
             border-width: 2px;
-            border-style:solid;
-            border-color:blue;
+            border-style: solid;
+            border-color: blue;
         }
-        
     </style>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
- <div id = logo> 
- <h1><img src="logo.png" width = 200 height=75></img> </h1>
- </div>
- <h1> PayPal Testing Tool</h1>
- <div class = "dropdown">
- <select>
-    <option value=””>createOrder</option>
-    <option value=””>showOrder</option>
-    <option value=””>capturePayment</option>
- </select>
-</div>
+    <div id=logo>
+        <h1><img src="logo.png" width=200 height=75></img> </h1>
+    </div>
+    <h1> PayPal Testing Tool</h1>
+    <div class="dropdown">
+        <select>
+            <option value=””>createOrder</option>
+            <option value=””>showOrder</option>
+            <option value=””>capturePayment</option>
+        </select>
+    </div>
 
- <div id = textarea>
-    <textarea>Request Body and Headers</textarea>
-</div>
+    <div id=textarea>
+        <textarea>Request Body and Headers</textarea>
+    </div>
 </body>
 
 
