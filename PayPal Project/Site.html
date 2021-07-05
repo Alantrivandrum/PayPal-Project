@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        h1 {
+            text-align: center;
+            color: blue
+        }
+
+        p {
+            text-align: center;
+        }
+
+        /*div {text-align: center;}*/
+        select {
+            font-size: 20;
+        }
+
+        #textarea {
+            display: flex;
+            justify-content: center;
+        }
+
+        textarea {
+            width: 420px;
+            height: 120;
+            border-width: 2px;
+            border-style: solid;
+            border-color: blue;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .main {
+            margin-left: 160px;
+            /* Same as the width of the sidenav */
+            font-size: 28px;
+            /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <a href="#Product">Product</a>
+        <a href="#API Call">Api Call</a>
+        <a href="#Something">Something</a>
+        <a href="#Something else">Something Else</a>
+    </div>
+
+    <div id=logo>
+        <h1><img src="logo.png" width=200 height=75></img> </h1>
+    </div>
+    <h1> PayPal Testing Tool</h1>
+    <div class="dropdown">
+        <select>
+            <option value=””>createOrder</option>
+            <option value=””>showOrder</option>
+            <option value=””>capturePayment</option>
+        </select>
+    </div>
+
+    <div id=textarea>
+        <textarea>Request Body and Headers</textarea>
+    </div>
+
+</body>
+
+</html>
