@@ -20,6 +20,16 @@ select {
     font-size: 20;
 }
 
+#title1 {
+    margin-top: 10px;
+    color: var(--lightblue);
+    text-align: center;
+}
+#title2 {
+    color: var(--darkblue);
+    margin-top: 125px;
+    text-align: center;
+}
 #textarea {
     display: flex;
     justify-content: center;
