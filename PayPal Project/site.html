@@ -1,203 +1,52 @@
+
+<!DOCTYPE html>
 <html>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        h1 {
-            text-align: center;
-            color: blue
-        }
-        h2 {
-            text-align: center;
-            color: blue
-        }
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        p {
-            text-align: center;
-        }
+        <title>REST API Test Tool</title>
+        
+        <link rel="icon" href="img/favicon.png" type="image/png"/> 
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </head>
 
-        /*div {text-align: center;}*/
-        select {
-            font-size: 20;
-        }
+    <body>
+        <header>
+            <div id=logo>
+                <img id="logo_image" src="img/logo.png"></img>
+            </div>
+        </header>
 
-        #textarea {
-            display: flex;
-            justify-content: center;
-        }
-        #title1 {
-            margin-top: 10px;
-        }
-        #title2 {
-            margin-top: 125px;
-        }
-
-        textarea {
-            width: 420px;
-            /*margin-top: 20px ;*/
-            height: 120;
-            border-width: 2px;
-            border-style: solid;
-            border-color: blue;
-        }
-
-        body {
-            font-family: "Lato", sans-serif;
-        }
-
-        .sidenav {
-            height: 100%;
-            width: 160px;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            padding-top: 20px;
-        }
-
-        .sidenav a {
-            padding: 6px 8px 6px 16px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        .main {
-            margin-left: 160px;
-            /* Same as the width of the sidenav */
-            font-size: 28px;
-            /* Increased text to enable scrolling */
-            padding: 0px 10px;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
-        }
-
-        body {
-            font-family: "Lato", sans-serif;
-        }
-
-        /* Fixed sidenav, full height */
-        .sidenav {
-            height: 100%;
-            width: 200px;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            padding-top: 20px;
-        }
-
-        /* Style the sidenav links and the dropdown button */
-        .sidenav a,
-        .dropdown-btn {
-            padding: 6px 8px 6px 16px;
-            text-decoration: none;
-            font-size: 20px;
-            color: #818181;
-            display: block;
-            border: none;
-            background: none;
-            width: 100%;
-            text-align: left;
-            cursor: pointer;
-            outline: none;
-        }
-
-        /* On mouse-over */
-        .sidenav a:hover,
-        .dropdown-btn:hover {
-            color: #f1f1f1;
-        }
-
-        /* Main content */
-        .main {
-            margin-left: 200px;
-            /* Same as the width of the sidenav */
-            font-size: 20px;
-            /* Increased text to enable scrolling */
-            padding: 0px 10px;
-        }
-
-        /* Add an active class to the active dropdown button */
-        .active {
-            background-color: green;
-            color: white;
-        }
-
-        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-        .dropdown-container {
-            display: none;
-            background-color: #262626;
-            padding-left: 8px;
-        }
-
-        /* Optional: Style the caret down icon */
-        .fa-caret-down {
-            float: right;
-            padding-right: 8px;
-        }
-
-        /* Some media queries for responsiveness */
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="sidenav">
-        <a href="#product">Product</a>
-        <a href="#apiCall">API Call</a>
-        <a href="#something">Something</a>
-        <a href="#SomethingElse">Something Else</a>
-        <button class="dropdown-btn">Dropdown
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="#">Create Order</a>
-            <a href="#">Show Order</a>
-            <a href="#">Capture Payment</a>
+        <div class="sidenav">
+            <a href="#product">Product</a>
+            <a href="#apiCall">API Call</a>
+            <a href="#something">Something</a>
+            <a href="#SomethingElse">Something Else</a>
+            <button class="dropdown-btn">Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Create Order</a>
+                <a href="#">Show Order</a>
+                <a href="#">Capture Payment</a>
+            </div>
+            <a href="#search">Search</a>
         </div>
-        <a href="#search">Search</a>
-    </div>
 
-    <div id=logo>
-        <h1><img src="logo.png" width=200 height=75></img> </h1>
-    </div>
-    <h1> PayPal Testing Tool</h1>
-    <div class="dropdown">
-        <select>
-            <option value=””>createOrder</option>
-            <option value=””>showOrder</option>
-            <option value=””>capturePayment</option>
-        </select>
-    </div>
-    <div id =title1>
+        <h1>PayPal Testing Tool</h1>
+        <div class="dropdown">
+            <select>
+                <option value=””>createOrder</option>
+                <option value=””>showOrder</option>
+                <option value=””>capturePayment</option>
+            </select>
+        </div>
+
+       <div id =title1>
         <h2>Request Body</h2>
     </div>
     <div id=textarea>
@@ -211,26 +60,9 @@
     <div id=textarea>
         <textarea>Response Body</textarea>
     </div>
-    
+        <!-- dropdown  -->
+        <script src="js/dropdown.js"></script>
 
-    <script>
-        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-        var dropdown = document.getElementsByClassName("dropdown-btn");
-        var i;
-
-        for (i = 0; i < dropdown.length; i++) {
-            dropdown[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var dropdownContent = this.nextElementSibling;
-                if (dropdownContent.style.display === "block") {
-                    dropdownContent.style.display = "none";
-                } else {
-                    dropdownContent.style.display = "block";
-                }
-            });
-        }
-    </script>
-
-</body>
+    </body>
 
 </html>
