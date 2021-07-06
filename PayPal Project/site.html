@@ -1,44 +1,57 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <style>
-        h1 {text-align: center; color:blue}
-        p {text-align: center;}
-        /*div {text-align: center;}*/
-        select {font-size: 20;   }
-        #textarea 
-        {
-            display: flex; justify-content: center;
-        }
-   
-        textarea 
-        {
-            width: 420px;
-            height:120;
-            border-width: 2px;
-            border-style:solid;
-            border-color:blue;
-        }
+
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <title>REST API Test Tool</title>
         
-    </style>
-</head>
+        <link rel="icon" href="img/favicon.png" type="image/png"/> 
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </head>
 
-<body>
- <div id = logo> 
- <h1><img src="logo.png" width = 200 height=75></img> </h1>
- </div>
- <h1> PayPal Testing Tool</h1>
- <div class = "dropdown">
- <select>
-    <option value=””>createOrder</option>
-    <option value=””>showOrder</option>
-    <option value=””>capturePayment</option>
- </select>
-</div>
+    <body>
+        <header>
+            <div id=logo>
+                <img id="logo_image" src="img/logo.png"></img>
+            </div>
+        </header>
 
- <div id = textarea>
-    <textarea>Request Body and Headers</textarea>
-</div>
-</body>
+        <div class="sidenav">
+            <a href="#product">Product</a>
+            <a href="#apiCall">API Call</a>
+            <a href="#something">Something</a>
+            <a href="#SomethingElse">Something Else</a>
+            <button class="dropdown-btn">Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Create Order</a>
+                <a href="#">Show Order</a>
+                <a href="#">Capture Payment</a>
+            </div>
+            <a href="#search">Search</a>
+        </div>
 
+        <h1>PayPal Testing Tool</h1>
+        <div class="dropdown">
+            <select>
+                <option value=””>createOrder</option>
+                <option value=””>showOrder</option>
+                <option value=””>capturePayment</option>
+            </select>
+        </div>
+
+        <div id=textarea>
+            <textarea>Request Body and Headers</textarea>
+        </div>
+
+        <!-- dropdown  -->
+        <script src="js/dropdown.js"></script>
+
+    </body>
 
 </html>
