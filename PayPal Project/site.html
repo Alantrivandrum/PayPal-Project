@@ -8,6 +8,10 @@
             text-align: center;
             color: blue
         }
+        h2 {
+            text-align: center;
+            color: blue
+        }
 
         p {
             text-align: center;
@@ -22,9 +26,16 @@
             display: flex;
             justify-content: center;
         }
+        #title1 {
+            margin-top: 10px;
+        }
+        #title2 {
+            margin-top: 125px;
+        }
 
         textarea {
             width: 420px;
+            /*margin-top: 20px ;*/
             height: 120;
             border-width: 2px;
             border-style: solid;
@@ -186,10 +197,21 @@
             <option value=””>capturePayment</option>
         </select>
     </div>
-
+    <div id =title1>
+        <h2>Request Body</h2>
+    </div>
     <div id=textarea>
         <textarea>Request Body and Headers</textarea>
     </div>
+
+
+    <div id =title2>
+        <h2>Response Body</h2>
+    </div>
+    <div id=textarea>
+        <textarea>Response Body</textarea>
+    </div>
+    
 
     <script>
         /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
