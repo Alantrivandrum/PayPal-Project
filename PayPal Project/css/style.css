@@ -34,18 +34,27 @@ select {
     margin-top: 125px;
     text-align: center;
 }
+
 #textarea {
     display: flex;
     justify-content: center;
 }
 
+#textarea2 {
+    width: 42em;
+    height: 16em;
+    border-radius: 10px;
+}
+
+#textarea1 {
+    width: 42em;
+    height: 1em;
+}
+
 textarea {
-    width: 420px;
-    height: 120px;
     border-width: 2px;
     border-style: solid;
     border-color: var(--boxblue);
-    border-radius: 10px;
     padding-left: 10px;
 }
 
