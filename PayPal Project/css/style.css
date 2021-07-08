@@ -1,5 +1,5 @@
- /* CSS global variables */
- :root {
+  /* CSS global variables */
+:root {
     --lightblue: #0094D8;
     --darkblue: #003087;
     --boxblue: #0070BA;
@@ -15,11 +15,25 @@ p {
     text-align: center;
 }
 
+form{
+    text-align: center;
+}
+
 /*div {text-align: center;}*/
 select {
     font-size: 20;
 }
 
+#title1 {
+    margin-top: 10px;
+    color: var(--lightblue);
+    text-align: center;
+}
+#title2 {
+    color: var(--darkblue);
+    margin-top: 125px;
+    text-align: center;
+}
 #textarea {
     display: flex;
     justify-content: center;
