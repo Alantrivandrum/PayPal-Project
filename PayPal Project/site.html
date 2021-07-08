@@ -1,77 +1,113 @@
-
 <!DOCTYPE html>
 <html>
 
 
 
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <title>REST API Test Tool</title>
-        
-        <link rel="icon" href="img/favicon.png" type="image/png"/> 
-        <link rel="stylesheet" href="css/style.css" type="text/css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    </head>
+  <title>REST API Test Tool</title>
 
-    <body>
-        <header>
-            <div id=logo>
-                <img id="logo_image" src="img/logo.png"></img>
-            </div>
-        </header>
-        <!-- Tick box code -->
-            <form>
-                Tick:<br>
-                <input type = "checkbox" name = "sandbox" value = "sandbox" tabindex= "1" />Sandbox <br/>
-                <input type = "checkbox" name = "live/production" value = "live/production" tabindex= "2" />Live/Production <br/>
-             </form>
-        
-    
-        <div class="sidenav">
-            <a href="#product">Product</a>
-            <a href="#apiCall">API Call</a>
-            <a href="#something">Something</a>
-            <a href="#SomethingElse">Something Else</a>
-            <button class="dropdown-btn">Dropdown
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-container">
-                <a href="#">Create Order</a>
-                <a href="#">Show Order</a>
-                <a href="#">Capture Payment</a>
-            </div>
-            <a href="#search">Search</a>
-        </div>
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
 
-        <h1>PayPal Testing Tool</h1>
-        <div class="dropdown">
-            <select>
-                <option value=””>createOrder</option>
-                <option value=””>showOrder</option>
-                <option value=””>capturePayment</option>
-            </select>
-        </div>
-
-    <div id =title1>
-        <h2>Request Body</h2>
+<body>
+  <header>
+    <div id=logo>
+      <img id="logo_image" src="img/logo.png"></img>
     </div>
-    <div id=textarea>
-        <textarea>Request Body and Headers</textarea>
-    </div>
+  </header>
+  <!-- Tick box code -->
+  <form>
+    Tick:<br>
+    <input type="checkbox" name="sandbox" value="sandbox" tabindex="1" />Sandbox <br />
+    <input type="checkbox" name="live/production" value="live/production" tabindex="2" />Live/Production <br />
+  </form>
 
 
-    <div id =title2>
-        <h2>Response Body</h2>
+  <div class="sidenav">
+    <a href="#product">Product</a>
+    <a href="#apiCall">API Call</a>
+    <a href="#something">Something</a>
+    <a href="#SomethingElse">Something Else</a>
+    <button class="dropdown-btn">Requests
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <button class="dropdown-btn">Payments
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <a href="createOrder#">Create Order</a>
+        <a href="showOrder#">Show Order</a>
+        <a href="captureOrder#">Capture Order</a>
+        <a href="authoriseOrder#">Authorise Order</a>
+        <a href="refund#">Refund</a>
+      </div>
+      <button class="dropdown-btn">Reference Transactions
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <a href="createToken#">Create Token</a>
+        <a href="showDetails#">Show Details</a>
+        <a href="createAgreement#">Create Agreement</a>
+        <a href="showAgreement#">Show Agreement</a>
+        <a href="cancelAgreement#">Cancel Agreement</a>
+      </div>
+      <button class="dropdown-btn">Subscriptions
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+        <a href="createProduct#">Create Product</a>
+        <a href="createPlan#">Create Plan</a>
+        <a href="activatePlan#">Activate Plan</a>
+        <a href="createSubscription#">Create Subscription</a>
+        <a href="activateSubscription#">Activate Subscription</a>
+        <a href="suspendSubscription#">Suspend Subscription</a>
+        <a href="authoriseSubscription#">Authorise Subscription</a>
+      </div>
     </div>
-    <div id=textarea>
-        <textarea>Response Body</textarea>
+    <button class="dropdown-btn">Dropdown
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="#">Create Order</a>
+      <a href="#">Show Order</a>
+      <a href="#">Capture Payment</a>
     </div>
-        <!-- dropdown  -->
-        <script src="js/dropdown.js"></script>
+    <a href="#search">Search</a>
+  </div>
 
-    </body>
+  <h1>PayPal Testing Tool</h1>
+  <div class="dropdown">
+    <select>
+      <option value=””>createOrder</option>
+      <option value=””>showOrder</option>
+      <option value=””>capturePayment</option>
+    </select>
+  </div>
+
+  <div id=title1>
+    <h2>Request Body</h2>
+  </div>
+  <div id=textarea>
+    <textarea>Request Body and Headers</textarea>
+  </div>
+
+
+  <div id=title2>
+    <h2>Response Body</h2>
+  </div>
+  <div id=textarea>
+    <textarea>Response Body</textarea>
+  </div>
+  <!-- dropdown  -->
+  <script src="js/dropdown.js"></script>
+
+</body>
 
 </html>
