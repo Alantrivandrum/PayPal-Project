@@ -6,6 +6,8 @@
     --palewhite: rgba(255, 255, 255, 0.7);
 }
 
+/* CSS elements */
+
 h1 {
     text-align: center;
     color: var(--boxblue);
@@ -15,9 +17,27 @@ p {
     text-align: center;
 }
 
+form{
+    text-align: center;
+}
+
 /*div {text-align: center;}*/
 select {
     font-size: 20;
+}
+
+/* CSS ids */
+
+#title1 {
+    margin-top: 10px;
+    color: var(--lightblue);
+    text-align: center;
+}
+
+#title2 {
+    color: var(--darkblue);
+    margin-top: 125px;
+    text-align: center;
 }
 
 #textarea {
@@ -25,13 +45,28 @@ select {
     justify-content: center;
 }
 
+#textarea1 {
+    width: 42em;
+    height: 1em;
+}
+
+#textarea2 {
+    width: 42em;
+    height: 16em;
+    border-radius: 10px;
+}
+
+#textarea3 {
+    width: 42em;
+    height: 16em;
+    border-radius: 10px;
+}
+
+
 textarea {
-    width: 420px;
-    height: 120px;
     border-width: 2px;
     border-style: solid;
     border-color: var(--boxblue);
-    border-radius: 10px;
     padding-left: 10px;
 }
 
@@ -50,8 +85,10 @@ body {
     padding: 10px;
 }
 
+/* CSS classes */
+
 .sidenav {
-    height: 100%;
+    height: 50%;
     width: 160px;
     position: fixed;
     z-index: 1;
