@@ -6,6 +6,8 @@
     --palewhite: rgba(255, 255, 255, 0.7);
 }
 
+/* CSS elements */
+
 h1 {
     text-align: center;
     color: var(--boxblue);
@@ -24,11 +26,14 @@ select {
     font-size: 20;
 }
 
+/* CSS ids */
+
 #title1 {
     margin-top: 10px;
     color: var(--lightblue);
     text-align: center;
 }
+
 #title2 {
     color: var(--darkblue);
     margin-top: 125px;
@@ -40,16 +45,23 @@ select {
     justify-content: center;
 }
 
+#textarea1 {
+    width: 42em;
+    height: 1em;
+}
+
 #textarea2 {
     width: 42em;
     height: 16em;
     border-radius: 10px;
 }
 
-#textarea1 {
+#textarea3 {
     width: 42em;
-    height: 1em;
+    height: 16em;
+    border-radius: 10px;
 }
+
 
 textarea {
     border-width: 2px;
@@ -73,8 +85,10 @@ body {
     padding: 10px;
 }
 
+/* CSS classes */
+
 .sidenav {
-    height: 100%;
+    height: 50%;
     width: 160px;
     position: fixed;
     z-index: 1;

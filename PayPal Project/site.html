@@ -1,9 +1,6 @@
 
 <!DOCTYPE html>
 <html>
-
-
-
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,65 +15,106 @@
 
     <body>
         <header>
-            <div id=logo>
+            <div id="logo">
                 <img id="logo_image" src="img/logo.png"></img>
             </div>
         </header>
+
         <h1>PayPal Testing Tool</h1>
+
         <!-- Tick box code -->
-        <!---
+        <div>
             <form>
-                Tick:<br>
+                Tick:
+                <br>
                 <input type = "checkbox" name = "sandbox" value = "sandbox" tabindex= "1" />Sandbox <br/>
                 <input type = "checkbox" name = "live/production" value = "live/production" tabindex= "2" />Live/Production <br/>
-             </form>
-        -->
-             <div id=textarea>
-                <textarea id = textarea1>API Endpoint</textarea>
-            </div>
-        
+            </form>
+        </div>
+        <br>
     
+        <div id="textarea">
+        <textarea id="textarea1">API Endpoint</textarea>
+        </div>
+
+        <!-- Request -->
+        <div id="title1">
+            <h2>Request Body</h2>
+        </div>
+        <div id="textarea">
+            <textarea id="textarea2">Request Body</textarea>
+        </div>
+
+        <!-- Response -->
+        <div id="title2">
+            <h2>Response Body</h2>
+        </div>
+        <div id="textarea">
+            <textarea id="textarea3">Response Body</textarea>
+        </div>
+
+        <!-- Side Navigation -->
         <div class="sidenav">
-            <a href="#product">Product</a>
-            <a href="#apiCall">API Call</a>
-            <a href="#something">Something</a>
-            <a href="#SomethingElse">Something Else</a>
-            <button class="dropdown-btn">Dropdown
+            <a onclick="ChangeText('product');">Product</a>
+            <a onclick="ChangeText('apiCall');">API Call</a>
+            <a onclick="ChangeText('something');">Something</a>
+            <a onclick="ChangeText('somethingElse');">Something Else</a>
+
+            <button class="dropdown-btn">Requests
+                <i class="fa fa-caret-down"></i>
+            </button>
+
+            <div class="dropdown-container">
+                <button class="dropdown-btn">Payments
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a onclick="ChangeText('createOrder');">Create Order</a>
+                    <a onclick="ChangeText('showOrder');">Show Order</a>
+                    <a onclick="ChangeText('captureOrder');">Capture Order</a>
+                    <a onclick="ChangeText('authoriseOrder');">Authorise Order</a>
+                    <a onclick="ChangeText('refund');">Refund</a>
+                </div>
+
+                <button class="dropdown-btn">Reference Transactions
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a onclick="ChangeText('createToken');">Create Token</a>
+                    <a onclick="ChangeText('showDetails');">Show Details</a>
+                    <a onclick="ChangeText('createAgreement');">Create Agreement</a>
+                    <a onclick="ChangeText('showAgreement');">Show Agreement</a>
+                    <a onclick="ChangeText('cancelAgreement');">Cancel Agreement</a>
+                </div>
+
+                <button class="dropdown-btn">Subscriptions
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-container">
+                    <a onclick="ChangeText('createProduct');">Create Product</a>
+                    <a onclick="ChangeText('createPlan');">Create Plan</a>
+                    <a onclick="ChangeText('activatePlan');">Activate Plan</a>
+                    <a onclick="ChangeText('createSubscription');">Create Subscription</a>
+                    <a onclick="ChangeText('activateSubscription');">Activate Subscription</a>
+                    <a onclick="ChangeText('suspendSubscription');">Suspend Subscription</a>
+                    <a onclick="ChangeText('authoriseSubscription');">Authorise Subscription</a>
+                </div>
+            </div>
+
+            <!-- <button class="dropdown-btn">Dropdown
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a href="#">Create Order</a>
-                <a href="#">Show Order</a>
-                <a href="#">Capture Payment</a>
-            </div>
-            <a href="#search">Search</a>
+                <a onclick="ChangeText('createOrder');">Create Order</a>
+                <a onclick="ChangeText('showOrder');">Show Order</a>
+                <a onclick="ChangeText('captureOrder');">Capture Payment</a>
+            </div> -->
+
+            <a onclick="ChangeText();">Search</a>
         </div>
 
-        <div class="dropdown">
-            <select>
-                <option value=””>createOrder</option>
-                <option value=””>showOrder</option>
-                <option value=””>capturePayment</option>
-            </select>
-        </div>
-
-    <div id =title1>
-        <h2>Request Body</h2>
-    </div>
-    <div id=textarea>
-        <textarea id = textarea2>Request Body and Headers</textarea>
-    </div>
-
-
-    <div id =title2>
-        <h2>Response Body</h2>
-    </div>
-    <div id=textarea>
-        <textarea id = textarea2>Response Body</textarea>
-    </div>
-        <!-- dropdown  -->
-        <script src="js/dropdown.js"></script>
+        <!-- Dropdown List  -->
+        <script src="js/script.js"></script>
 
     </body>
-
 </html>
