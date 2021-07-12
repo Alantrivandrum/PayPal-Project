@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 
 
@@ -31,9 +31,6 @@
                 <input type = "checkbox" name = "live/production" value = "live/production" tabindex= "2" />Live/Production <br/>
              </form>
         -->
-             <div id=textarea>
-                <textarea id = textarea1>API Endpoint</textarea>
-            </div>
         
     
         <div class="sidenav">
@@ -61,11 +58,33 @@
         </div>
 
     <div id =title1>
-        <h2>Request Body</h2>
+        <h2>Request</h2>
     </div>
+   
+
     <div id=textarea>
-        <textarea id = textarea2>Request Body and Headers</textarea>
+        <form action="/cat2/PayPal Project/php/request.php" method="post">
+            Api Endpoint: <br>
+            <div id=textarea>
+                <textarea name ="api_endpoint" id = textarea1>API Endpoint</textarea>
+            </div>
+            </br>
+            Request Body: <br>
+            <textarea name ="request_body" id = textarea2 >Request Body and Headers</textarea>
+            </br>
+
+            <input type="submit" value="Submit" />
+        </form>
     </div>
+    
+     <!--
+    <form action ="/cat2/PayPal Project/php/request.php" method = "POST">
+        
+        <textarea name ="API Endpoint:2" ></textarea>
+        <br>
+        <input type = "submit" value = "Submit" >
+        </form>
+     -->
 
 
     <div id =title2>
@@ -74,9 +93,13 @@
     <div id=textarea>
         <textarea id = textarea2>Response Body</textarea>
     </div>
-        <!-- dropdown  -->
-        <script src="js/dropdown.js"></script>
 
+    <div id = button> 
+        <button class = "button"> Submit</button>
+    </div>
+
+    <!-- dropdown  -->
+    <script src="js/dropdown.js"></script>
     </body>
 
 </html>

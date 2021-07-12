@@ -40,6 +40,11 @@ select {
     justify-content: center;
 }
 
+#button {
+    display: flex;
+    justify-content: center;
+}
+
 #textarea2 {
     width: 42em;
     height: 16em;
@@ -132,6 +137,19 @@ body {
     padding-top: 20px;
 }
 
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    background-color: var(--darkblue);
+    border: 3px solid var(--lightblue);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
 /* Style the sidenav links and the dropdown button */
 .sidenav a,
 .dropdown-btn {
