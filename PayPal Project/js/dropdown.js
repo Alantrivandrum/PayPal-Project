@@ -54,7 +54,7 @@
       }
 
       let createAgreement = {
-        "token_id": "BA-0BE87136AP142740J"
+        "token_id": "{token_id}"
       }
 
       let createProduct = {
@@ -67,7 +67,7 @@
       }
 
       let createPlan = {
-        "product_id": "PROD-5FD60555F23244316",
+        "product_id": "{product_id}",
         "name": "Basic Plan",
         "description": "Basic plan",
         "billing_cycles": [
@@ -112,7 +112,7 @@
       }
 
       let createSubscription = {
-        "plan_id": "P-96G787613W035853KMDI5QZA"
+        "plan_id": "{plan_id}"
       }
 
       let activateSubscription = {
