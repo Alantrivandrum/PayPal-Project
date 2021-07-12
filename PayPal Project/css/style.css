@@ -26,6 +26,17 @@ select {
     font-size: 20;
 }
 
+textarea {
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--boxblue);
+    padding-left: 10px;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
 /* CSS ids */
 
 #title1 {
@@ -36,7 +47,7 @@ select {
 
 #title2 {
     color: var(--darkblue);
-    margin-top: 125px;
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -47,7 +58,8 @@ select {
 
 #textarea1 {
     width: 42em;
-    height: 1em;
+    height: 16em;
+    border-radius: 10px;
 }
 
 #textarea2 {
@@ -62,18 +74,6 @@ select {
     border-radius: 10px;
 }
 
-
-textarea {
-    border-width: 2px;
-    border-style: solid;
-    border-color: var(--boxblue);
-    padding-left: 10px;
-}
-
-body {
-    font-family: "Lato", sans-serif;
-}
-
 #logo {
     display: flex;
     justify-content: center;
@@ -83,6 +83,16 @@ body {
     height: 100px;
     width: 200px;
     padding: 10px;
+}
+
+#pay_div {
+    display: flex;
+    justify-content: center;
+}
+
+#pay_button {
+    height: 50px;
+    width: 50px;
 }
 
 /* CSS classes */
