@@ -58,7 +58,8 @@ body {
 
 #textarea1 {
     width: 42em;
-    height: 1em;
+    height: 16em;
+    border-radius: 10px;
 }
 
 #textarea2 {
