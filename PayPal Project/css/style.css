@@ -1,3 +1,4 @@
+
   /* CSS global variables */
 :root {
     --lightblue: #0094D8;
@@ -109,7 +110,16 @@ body {
 body {
     font-family: "Lato", sans-serif;
 }
+#textarea2 {
+    width: 42em;
+    height: 16em;
+    border-radius: 10px;
+}
 
+#textarea1 {
+    width: 42em;
+    height: 1em;
+}
 /* Fixed sidenav, full height */
 .sidenav {
     height: 100%;
