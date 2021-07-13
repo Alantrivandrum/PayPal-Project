@@ -80,15 +80,60 @@
           <a onclick="ChangeText('authoriseSubscription');">Authorise Subscription</a>
       </div>
   </div>
-    <button class="dropdown-btn">Dropdown
+    <button class="dropdown-btn">Credentials
       <i class="fa fa-caret-down"></i>
     </button>
+
     <div class="dropdown-container">
-      
-      <a href ="createOrder#">Create Order</a>
-      <a href ="showOrder#">Show Order</a>
+      <button class="dropdown-btn">Preloaded Accounts
+          <i class="fa fa-caret-down"></i>
+      </button>
+
+      <div class="dropdown-container">
+        <a onclick="ChangeText('CRI_US');">CRI-US Business Verified 3.0-DG</a>
+        <a onclick="ChangeText('CRI_UK');">CRI-US Business Verified</a>
+        <a onclick="ChangeText('CRI-IT');">CRI-IT Business Verified</a>
+        <a onclick="ChangeText('CRI-FR');">CRI-FR Premier Verified</a>
+        <a onclick="ChangeText('CRI-DE');">CRI-DE Business Verified</a>
+        <a onclick="ChangeText('CRI-US');">CRI-US Airline Account</a>
+
+    </div>
+
+
+   <!-- <div class="dropdown-container">
+    <input type ="checkbox" id ="collapsible-head">
+    <label for ="collapsible-head">Enter below</label>
+    <div class ="collapsible-text"></div>
+    <button class="Preloaded-Accounts">Preloaded Accounts
+    <i class="fa fa-caret-down"></i>
+      </button>
+     <a href ="CRI_US#">CRI-US Buisness Verified 3.0-DG</a>   
+      <p>
+        Username:
+        Password:
+        Signature:
+       </p>-->
+
+       <div id=textarea>
+        <textarea name ="credentials" id = textarea0>Live credentials have been disabled
+                                                     Username:
+                                                     Password:
+                                                     Signature:
+                                                    
+    </textarea>
+    </div>
+
+
+
+
+     
+        <!-- <a href ="creatOrder#">User</a> 
+        <a href ="showOrder#">Show Order</a>
       <a href ="capturePayment#">Capture Payment</a>
-      
+      -->
+
+
+
     </div>
   </div>
 
@@ -96,7 +141,7 @@
     <h2>Request</h2>
   </div>
  <div id=textarea>
-        <form action="/cat2/PayPal Project/php/request.php" method="post">
+        <form action="/PayPal-Project/PayPal Project/php/request.php" method="post">
             Api Endpoint: <br>
             <div id=textarea>
                 <textarea name ="api_endpoint" id = textarea1>API Endpoint</textarea>
@@ -109,6 +154,8 @@
             <input type="submit" value="Submit" />
         </form>
     </div>
+
+    
     
      <!--
     <form action ="/cat2/PayPal Project/php/request.php" method = "POST">
