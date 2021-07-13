@@ -1,4 +1,5 @@
- /* CSS global variables */
+
+  /* CSS global variables */
 :root {
     --lightblue: #0094D8;
     --darkblue: #003087;
@@ -34,32 +35,18 @@ select {
     margin-top: 125px;
     text-align: center;
 }
-
 #textarea {
     display: flex;
     justify-content: center;
 }
 
-#button {
-    display: flex;
-    justify-content: center;
-}
-
-#textarea2 {
-    width: 42em;
-    height: 16em;
-    border-radius: 10px;
-}
-
-#textarea1 {
-    width: 42em;
-    height: 1em;
-}
-
 textarea {
+    width: 420px;
+    height: 120px;
     border-width: 2px;
     border-style: solid;
     border-color: var(--boxblue);
+    border-radius: 10px;
     padding-left: 10px;
 }
 
@@ -123,7 +110,16 @@ body {
 body {
     font-family: "Lato", sans-serif;
 }
+#textarea2 {
+    width: 42em;
+    height: 16em;
+    border-radius: 10px;
+}
 
+#textarea1 {
+    width: 42em;
+    height: 1em;
+}
 /* Fixed sidenav, full height */
 .sidenav {
     height: 100%;
@@ -137,19 +133,6 @@ body {
     padding-top: 20px;
 }
 
-.button {
-    display: flex;
-    justify-content: center;
-    margin-top: 2em;
-    background-color: var(--darkblue);
-    border: 3px solid var(--lightblue);
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  }
 /* Style the sidenav links and the dropdown button */
 .sidenav a,
 .dropdown-btn {
