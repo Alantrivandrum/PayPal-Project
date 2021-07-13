@@ -34,17 +34,23 @@
         </div>
         <br>
     
+        <!-- API Endpoint and Request -->
         <div id="textarea">
-            <textarea id="textarea1">API Endpoint</textarea>
-        </div>
+            <form action="/PP/PayPal-Project/PayPal Project/php/request.php" method="POST">
+                <div id="title1">
+                    <h2>API Endpoint</h2>
+                </div>
+                <textarea id="textarea1" name="api_endpoint">API Endpoint</textarea>
 
-        <!-- Request -->
-        <div id="title1">
-            <h2>Request Body</h2>
-        </div>
-        <div id="textarea">
-            <form action="post.php" method="POST">
-                <textarea id="textarea2" name="request_body_textarea">Request Body</textarea>
+                <div id="title1">
+                    <h2>Request Body</h2>
+                </div>
+                <textarea id="textarea2" name="request_body">Request Body</textarea>
+
+                <!-- Pay Button -->
+                <div id="button"> 
+                    <input type="submit" value="Submit" class="button"></button>
+                </div>
             </form>
         </div>
 
@@ -54,11 +60,6 @@
         </div>
         <div id="textarea">
             <textarea id="textarea3">Response Body</textarea>
-        </div>
-
-        <div id="pay_div">
-            <!-- <button id="pay_button" onclick="parseText('textarea2');">Pay</button> -->
-            <input type="button" value="Pay">
         </div>
 
         <!-- Side Navigation -->
@@ -109,60 +110,10 @@
                 </div>
             </div>
 
-    <!-- <div id =title1>
-        <h2>Request</h2>
-    </div>
-   
-
-    <div id=textarea>
-        <form action="/cat2/PayPal Project/php/request.php" method="post">
-            Api Endpoint: <br>
-            <div id=textarea>
-                <textarea name ="api_endpoint" id = textarea1>API Endpoint</textarea>
-            </div>
-            </br>
-            Request Body: <br>
-            <textarea name ="request_body" id = textarea2 >Request Body and Headers</textarea>
-            </br>
-
-            <input type="submit" value="Submit" />
-        </form>
-    </div> -->
-    
-     <!--
-    <form action ="/cat2/PayPal Project/php/request.php" method = "POST">
-        
-        <textarea name ="API Endpoint:2" ></textarea>
-        <br>
-        <input type = "submit" value = "Submit" >
-        </form>
-     -->
-
-            <!-- <button class="dropdown-btn">Dropdown
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-container">
-                <a onclick="changeText('createOrder');">Create Order</a>
-                <a onclick="changeText('showOrder');">Show Order</a>
-                <a onclick="changeText('captureOrder');">Capture Payment</a>
-            </div> -->
-
             <a onclick="changeText();">Search</a>
         </div>
 
         <!-- Dropdown List  -->
         <script src="js/script.js"></script>
-
-    <!-- <div id =title2>
-        <h2>Response Body</h2>
-    </div>
-    <div id=textarea>
-        <textarea id = textarea2>Response Body</textarea>
-    </div>
-
-    <div id = button> 
-        <button class = "button"> Submit</button>
-    </div> -->
-
     </body>
 </html>

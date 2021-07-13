@@ -96,16 +96,6 @@ body {
     padding: 10px;
 }
 
-#pay_div {
-    display: flex;
-    justify-content: center;
-}
-
-#pay_button {
-    height: 50px;
-    width: 50px;
-}
-
 /* CSS classes */
 
 .sidenav {
@@ -171,6 +161,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 2em;
+    margin-bottom: 2em;
     background-color: var(--darkblue);
     border: 3px solid var(--lightblue);
     color: white;

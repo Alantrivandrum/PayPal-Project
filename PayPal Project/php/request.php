@@ -1,4 +1,5 @@
 <?php
+
 if ($_POST) // If form was submited...
 {
     $api_endpoint = $_POST["api_endpoint"];
