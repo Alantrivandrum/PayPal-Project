@@ -137,28 +137,18 @@
     function ChangeText(content) {
     
         switch(content) {
-            case "product":
-                document.getElementById("textarea1").value = 'Product';
-                document.getElementById("textarea2").value = 'Product';
-                document.getElementById("textarea3").value = 'Product';
+            case "paypal":
+                document.getElementById("textarea1").value = 'PayPal';
+                document.getElementById("textarea2").value = 'PayPal';
+                document.getElementById("textarea3").value = 'PayPal';
                 break;
-            case "apiCall":
-                document.getElementById("textarea1").value = 'APICall';
-                document.getElementById("textarea2").value = 'APICall';
-                document.getElementById("textarea3").value = 'APICall';
+            case "braintree":
+                document.getElementById("textarea1").value = 'Braintree';
+                document.getElementById("textarea2").value = 'Braintree';
+                document.getElementById("textarea3").value = 'Braintree';
                 break;
-            case "something":
-                document.getElementById("textarea1").value = 'Something';
-                document.getElementById("textarea2").value = 'Something';
-                document.getElementById("textarea3").value = 'Something';
-                break;
-            case "somethingElse":
-                document.getElementById("textarea1").value = 'Something Else';
-                document.getElementById("textarea2").value = 'Something Else';
-                document.getElementById("textarea3").value = 'Something Else';
-                break;
-            // Payments
-    
+           
+                // Payments
             case "createOrder":
                 document.getElementById("textarea1").value = 'https://api-m.sandbox.paypal.com/v2/checkout/orders';
                 document.getElementById("textarea2").value = JSON.stringify(createOrder,null,4);
