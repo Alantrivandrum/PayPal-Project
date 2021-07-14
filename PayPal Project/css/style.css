@@ -30,6 +30,7 @@ select {
     color: var(--lightblue);
     text-align: center;
 }
+
 #title2 {
     color: var(--darkblue);
     margin-top: 125px;
@@ -48,7 +49,19 @@ textarea {
     border-color: var(--boxblue);
     border-radius: 10px;
     padding-left: 10px;
+  
 }
+
+#test {
+    display: inline-block;
+    position: fixed;
+    /* margin-right: 1000px; */
+    margin-top:120px ;
+    left: 210px;
+    height: 200px;
+    width: 200px;
+}
+
 
 body {
     font-family: "Lato", sans-serif;
@@ -67,7 +80,7 @@ body {
 
 .sidenav {
     height: 100%;
-    width: 160px;
+    width: 100px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -90,7 +103,7 @@ body {
 }
 
 .main {
-    margin-left: 160px;
+    margin-left: 100px;
     /* Same as the width of the sidenav */
     font-size: 28px;
     /* Increased text to enable scrolling */
@@ -110,6 +123,7 @@ body {
 body {
     font-family: "Lato", sans-serif;
 }
+
 #textarea2 {
     width: 42em;
     height: 16em;
@@ -149,21 +163,7 @@ body {
     outline: none;
 }
 
-.sidenav a,
-.dropdown-btn {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: var(--palewhite);
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
-}
-
+ 
 
 /* On mouse-over */
 .sidenav a:hover,
@@ -177,7 +177,7 @@ body {
     /* Same as the width of the sidenav */
     font-size: 20px;
     /* Increased text to enable scrolling */
-    padding: 0px 10px;
+    padding: 0px 0px;
 }
 
 /* Add an active class to the active dropdown button */
