@@ -1,4 +1,5 @@
- /* CSS global variables */
+
+/* CSS global variables */
 :root {
     --lightblue: #0094D8;
     --darkblue: #003087;
@@ -26,10 +27,14 @@ select {
 }
 
 textarea {
+    width: 420px;
+    height: 120px;
     border-width: 2px;
     border-style: solid;
     border-color: var(--boxblue);
+    border-radius: 10px;
     padding-left: 10px;
+  
 }
 
 body {
@@ -50,20 +55,14 @@ body {
     text-align: center;
 }
 
-#textarea {
-    display: flex;
-    justify-content: center;
-}
-
 #button {
     display: flex;
     justify-content: center;
 }
 
-#textarea2 {
-    width: 42em;
-    height: 16em;
-    border-radius: 10px;
+#textarea {
+    display: flex;
+    justify-content: center;
 }
 
 #textarea1 {
@@ -78,18 +77,19 @@ body {
     border-radius: 10px;
 }
 
-#test {
-    display: inline-block;
-    position: fixed;
-    margin-left: 200px;
-    height: 200px;
-    width: 200px;
-}
-
 #textarea3 {
     width: 42em;
     height: 16em;
     border-radius: 10px;
+}
+
+#textarea4 {
+    display: inline-block;
+    position: fixed;
+    margin-top: 200px;
+    left: 210px;
+    height: 200px;
+    width: 200px;
 }
 
 #logo {
@@ -131,7 +131,7 @@ body {
 }
 
 .main {
-    margin-left: 160px;
+    margin-left: 100px;
     /* Same as the width of the sidenav */
     font-size: 28px;
     /* Increased text to enable scrolling */
@@ -161,7 +161,8 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-  }
+}
+
 /* Style the sidenav links and the dropdown button */
 .sidenav a,
 .dropdown-btn {
@@ -190,7 +191,7 @@ body {
     /* Same as the width of the sidenav */
     font-size: 20px;
     /* Increased text to enable scrolling */
-    padding: 0px 10px;
+    padding: 0px 0px;
 }
 
 /* Add an active class to the active dropdown button */
