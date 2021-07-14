@@ -23,16 +23,9 @@
 
         <h1>PayPal Testing Tool</h1>
 
-        <!-- Tick box code -->
-        <div>
-            <form>
-                Tick:
-                <br>
-                <input type = "checkbox" name = "sandbox" value = "sandbox" tabindex= "1" />Sandbox <br/>
-                <input type = "checkbox" name = "live/production" value = "live/production" tabindex= "2" />Live/Production <br/>
-            </form>
+        <div id="test">
+            <textarea>Hey</textarea>
         </div>
-        <br>
     
         <!-- API Endpoint and Request -->
         <div id="textarea">
@@ -64,11 +57,14 @@
 
         <!-- Side Navigation -->
         <div class="sidenav">
-            <a onclick="changeText('product');">Product</a>
-            <a onclick="changeText('apiCall');">API Call</a>
-            <a onclick="changeText('something');">Something</a>
-            <a onclick="changeText('somethingElse');">Something Else</a>
-
+            <button class="dropdown-btn">Product
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a>PayPal</a>
+                <a>Braintree</a>
+            </div>
+    
             <button class="dropdown-btn">Requests
                 <i class="fa fa-caret-down"></i>
             </button>
@@ -84,7 +80,7 @@
                     <a onclick="changeText('authoriseOrder');">Authorise Order</a>
                     <a onclick="changeText('refund');">Refund</a>
                 </div>
-
+          
                 <button class="dropdown-btn">Reference Transactions
                     <i class="fa fa-caret-down"></i>
                 </button>
@@ -95,7 +91,7 @@
                     <a onclick="changeText('showAgreement');">Show Agreement</a>
                     <a onclick="changeText('cancelAgreement');">Cancel Agreement</a>
                 </div>
-
+          
                 <button class="dropdown-btn">Subscriptions
                     <i class="fa fa-caret-down"></i>
                 </button>

@@ -15,7 +15,7 @@ for (i = 0; i < dropdown.length; i++) {
     });
 }
 
-// Variables for changing the textareas
+// JSON Requests
 var endpoint = "https://api.sandbox.paypal.com";
 
 let createOrder = {
@@ -139,28 +139,7 @@ let authoriseSubscription = {
 function changeText(content) {
 
     switch(content) {
-        case "product":
-            document.getElementById("textarea1").value = 'Product';
-            document.getElementById("textarea2").value = 'Product';
-            document.getElementById("textarea3").value = 'Product';
-            break;
-        case "apiCall":
-            document.getElementById("textarea1").value = 'APICall';
-            document.getElementById("textarea2").value = 'APICall';
-            document.getElementById("textarea3").value = 'APICall';
-            break;
-        case "something":
-            document.getElementById("textarea1").value = 'Something';
-            document.getElementById("textarea2").value = 'Something';
-            document.getElementById("textarea3").value = 'Something';
-            break;
-        case "somethingElse":
-            document.getElementById("textarea1").value = 'Something Else';
-            document.getElementById("textarea2").value = 'Something Else';
-            document.getElementById("textarea3").value = 'Something Else';
-            break;
         // Payments
-
         case "createOrder":
             document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders';
             document.getElementById("textarea2").value = JSON.stringify(createOrder,null,4);
