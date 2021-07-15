@@ -133,6 +133,21 @@ let authoriseSubscription = {
   }
 }
 
+var US = "US_Example@paypal.com"
+var UK = "UK_Example@paypal.com"
+var IT = "IT_Example@paypal.com"
+var FR = "FR_Example@paypal.com"
+var DE = "DE_Example@paypal.com"
+var USA = "USA_Example@paypal.com"
+
+var Password = "Paypal1234"
+
+var US_sig = "EO02ZW9J0L28yMIX60g_piV4oVC4fZOFuYD2unnazkYwfAgD_7gzvKaz0t_tOEeGVam2kwvEi9wzj-sM"
+var UK_sig = "EDT3s_07o9USWRto-UMwCbXtfxhD5aLnwdf3BTGcrNZJyUQZmBMXx17HsNgLSx-QW4Lhk3qvVcq1yVXf"
+var IT_sig = "EEs8wAabN_lweaNT6l68X_0rxEeYsWpsnPvj5kMOPs76qm-4feQKcb2GNEoUssNuBNXNyebHDbHZAYQ6"
+var FR_sig = "EKO8HdMuVdWrnc4Ykvgzbvf74zATbElGPUumLsUPnlSADsxih2FN2UsP051bfxdY0QfPgs1RTi-vCTfs"
+var DE_sig = "ELVd6Bqs9dX_mW0O1p1jYytfshfYN_65FHL00ttZoLQf5qS_VAElXo__LI1F72gTIUEp0m3RTMbqRFks"
+var USA_sig = "EMfDYU1K3KX87K7-6xpAIoBiCLZTJAy6BrzDaKCtEDeAGFuQnRqm0GMyy435xOW4UZPzpO8stJJ780wi"
 /* Change content in textareas when clicking a certain dropdown button */
 function ChangeText(content) {
 
@@ -239,22 +254,22 @@ function ChangeText(content) {
       document.getElementById("textarea3").value = 'Authorise Subscription';
       break;
     case "CRI_US":
-      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: John Doe the yank \nPassword: fdsafdsafds \nSignature: fdsa34fdsaf';
+      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: '+US+ '\nPassword: '+Password+' \nSignature: '+US_sig;
       break;
     case "CRI_UK":
-      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: John Doe the loser of the euros \nPassword: fdsafdsafds \nSignature: fdsa34fdsaf';
+      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: '+UK+ '\nPassword: '+Password+' \nSignature: '+UK_sig;
       break;
     case "CRI_IT":
-      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: John Doe the winner of the euros \nPassword: fdsafdsafds \nSignature: fdsa34fdsaf';
+      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: '+IT+ '\nPassword: '+Password+' \nSignature: '+IT_sig;
       break;
     case "CRI_FR":
-      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: John Doe france\nPassword: fdsafdsafds \nSignature: fdsa34fdsaf';
+      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: '+FR+ '\nPassword: '+Password+' \nSignature: '+FR_sig;
       break;
     case "CRI_DE":
-      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: John Doe Gleeban Gluban \nPassword: fdsafdsafds \nSignature: fdsa34fdsaf';
+      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: '+DE+ '\nPassword: '+Password+' \nSignature: '+DE_sig;
       break;
     case "CRI_USA":
-      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: John Doe yank in the airline \nPassword: fdsafdsafds \nSignature: fdsa34fdsaf';
+      document.getElementById("textarea4").value = 'Live credentials have been disabled:\nUsername: '+USA+ '\nPassword: '+Password+' \nSignature: '+USA_sig;
       break;
     default:
       document.getElementById("textarea1").value = 'Error';
