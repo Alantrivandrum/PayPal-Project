@@ -18,7 +18,7 @@ if ($_POST) // If form was submited...
 
     $headers = array(
         "Content-Type: application/json",
-        "Authorization: Bearer [token]",
+        "Authorization: Bearer ",
     );
 
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -35,7 +35,6 @@ if ($_POST) // If form was submited...
     else
     {
         $decoded = json_decode($res);
-        print_r($decoded);
     }
 
     curl_close($ch);

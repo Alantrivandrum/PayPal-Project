@@ -1,5 +1,8 @@
 
 <!DOCTYPE html>
+
+<?php include 'php/request.php'; ?>
+
 <html lang="en">
     
     <head>
@@ -29,7 +32,7 @@
                 <textarea>Live credentials have been disabled:&#10;Username:&#10;Password:&#10;Signature:</textarea>
             </div>
 
-            <form action="/PP/PayPal-Project/PayPal Project/php/request.php" method="POST">
+            <form method="POST">
                 <div id="title1">
                     <h2>API Endpoint</h2>
                 </div>
@@ -52,7 +55,16 @@
             <h2>Response Body</h2>
         </div>
         <div id="textarea">
-            <textarea id="textarea3">Response Body</textarea>
+            <textarea id="textarea3"><?php 
+                    if($_POST) {
+                        print_r($decoded);
+                    } 
+                    else
+                    {  
+                        echo "Response Body";
+                    }
+                ?>
+            </textarea>
         </div>
 
         <!-- Side Navigation -->
@@ -103,6 +115,24 @@
                     <a onclick="changeText('activateSubscription');">Activate Subscription</a>
                     <a onclick="changeText('suspendSubscription');">Suspend Subscription</a>
                     <a onclick="changeText('authoriseSubscription');">Authorise Subscription</a>
+                </div>
+            </div>
+
+            <button class="dropdown-btn">Credentials
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <button class="dropdown-btn">Preloaded Accounts
+                    <i class="fa fa-caret-down"></i>
+                </button>
+          
+                <div class="dropdown-container">
+                  <a onclick="changeText('CRI_US');">CRI-US Business Verified 3.0-DG</a>
+                  <a onclick="changeText('CRI_UK');">CRI-US Business Verified</a>
+                  <a onclick="changeText('CRI-IT');">CRI-IT Business Verified</a>
+                  <a onclick="changeText('CRI-FR');">CRI-FR Premier Verified</a>
+                  <a onclick="changeText('CRI-DE');">CRI-DE Business Verified</a>
+                  <a onclick="changeText('CRI-US');">CRI-US Airline Account</a>
                 </div>
             </div>
 
