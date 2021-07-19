@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
-<<<<<<< HEAD
+
+<?php include 'php/request.php'; ?>
+
 <html lang="en">
-=======
-<html>
->>>>>>> 10b30f53d3ea6d2938cd5f92c301af258e3b3906
+    
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,34 +25,29 @@
         </header>
 
         <h1>PayPal Testing Tool</h1>
-
-        <!-- Tick box code -->
-        <div>
-            <form>
-                Tick:
-                <br>
-                <input type = "checkbox" name = "sandbox" value = "sandbox" tabindex= "1" />Sandbox <br/>
-                <input type = "checkbox" name = "live/production" value = "live/production" tabindex= "2" />Live/Production <br/>
-            </form>
-        </div>
-        <br>
     
+        <!-- API Endpoint and Request -->
         <div id="textarea">
-        <textarea id="textarea1">API Endpoint</textarea>
-        </div>
+            <div id="textarea4">
+                <textarea>Live credentials have been disabled:&#10;Username:&#10;Password:&#10;Signature:</textarea>
+            </div>
 
-        <!-- Request -->
-        <div id="title1">
-            <h2>Request Body</h2>
-        </div>
-        <div id="textarea">
-<<<<<<< HEAD
-            <form action="post.php" method="POST">
-                <textarea id="textarea2" name="request_body_textarea">Request Body</textarea>
+            <form method="POST">
+                <div id="title1">
+                    <h2>API Endpoint</h2>
+                </div>
+                <textarea id="textarea1" name="api_endpoint">API Endpoint</textarea>
+
+                <div id="title1">
+                    <h2>Request Body</h2>
+                </div>
+                <textarea id="textarea2" name="request_body">Request Body</textarea>
+
+                <!-- Pay Button -->
+                <div id="button"> 
+                    <input type="submit" value="Submit" class="button"></button>
+                </div>
             </form>
-=======
-            <textarea id="textarea2">Request Body</textarea>
->>>>>>> 10b30f53d3ea6d2938cd5f92c301af258e3b3906
         </div>
 
         <!-- Response -->
@@ -60,21 +55,28 @@
             <h2>Response Body</h2>
         </div>
         <div id="textarea">
-            <textarea id="textarea3">Response Body</textarea>
-        </div>
-
-        <div id="pay_div">
-            <!-- <button id="pay_button" onclick="parseText('textarea2');">Pay</button> -->
-            <input type="button" value="Pay">
+            <textarea id="textarea3"><?php 
+                    if($_POST) {
+                        print_r($decoded);
+                    } 
+                    else
+                    {  
+                        echo "Response Body";
+                    }
+                ?>
+            </textarea>
         </div>
 
         <!-- Side Navigation -->
         <div class="sidenav">
-            <a onclick="changeText('product');">Product</a>
-            <a onclick="changeText('apiCall');">API Call</a>
-            <a onclick="changeText('something');">Something</a>
-            <a onclick="changeText('somethingElse');">Something Else</a>
-
+            <button class="dropdown-btn">Product
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a>PayPal</a>
+                <a>Braintree</a>
+            </div>
+    
             <button class="dropdown-btn">Requests
                 <i class="fa fa-caret-down"></i>
             </button>
@@ -90,7 +92,7 @@
                     <a onclick="changeText('authoriseOrder');">Authorise Order</a>
                     <a onclick="changeText('refund');">Refund</a>
                 </div>
-
+          
                 <button class="dropdown-btn">Reference Transactions
                     <i class="fa fa-caret-down"></i>
                 </button>
@@ -101,7 +103,7 @@
                     <a onclick="changeText('showAgreement');">Show Agreement</a>
                     <a onclick="changeText('cancelAgreement');">Cancel Agreement</a>
                 </div>
-
+          
                 <button class="dropdown-btn">Subscriptions
                     <i class="fa fa-caret-down"></i>
                 </button>
@@ -116,20 +118,28 @@
                 </div>
             </div>
 
-            <!-- <button class="dropdown-btn">Dropdown
+            <button class="dropdown-btn">Credentials
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
-                <a onclick="changeText('createOrder');">Create Order</a>
-                <a onclick="changeText('showOrder');">Show Order</a>
-                <a onclick="changeText('captureOrder');">Capture Payment</a>
-            </div> -->
+                <button class="dropdown-btn">Preloaded Accounts
+                    <i class="fa fa-caret-down"></i>
+                </button>
+          
+                <div class="dropdown-container">
+                  <a onclick="changeText('CRI_US');">CRI-US Business Verified 3.0-DG</a>
+                  <a onclick="changeText('CRI_UK');">CRI-US Business Verified</a>
+                  <a onclick="changeText('CRI-IT');">CRI-IT Business Verified</a>
+                  <a onclick="changeText('CRI-FR');">CRI-FR Premier Verified</a>
+                  <a onclick="changeText('CRI-DE');">CRI-DE Business Verified</a>
+                  <a onclick="changeText('CRI-US');">CRI-US Airline Account</a>
+                </div>
+            </div>
 
             <a onclick="changeText();">Search</a>
         </div>
 
         <!-- Dropdown List  -->
         <script src="js/script.js"></script>
-
     </body>
 </html>
