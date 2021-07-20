@@ -1,8 +1,10 @@
+<?php 
+    session_start();
+    include 'php/access_token.php';
+    include 'php/request.php';
+?>
 
 <!DOCTYPE html>
-
-<?php include 'php/request.php'; ?>
-
 <html lang="en">
     
     <head>
