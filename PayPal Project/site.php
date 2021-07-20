@@ -1,8 +1,8 @@
 
 <!DOCTYPE html>
+<?php include ' Create_order/access_token.php'; ?>
+
 <html>
-
-
 
 <head>
   <meta charset="UTF-8" />
@@ -100,7 +100,8 @@
 
     </div>
 
-    
+    <a onclick="changeText();">Search</a>
+        </div>
 
 
    <!-- <div class="dropdown-container">
@@ -196,24 +197,23 @@ Signature:</textarea>
     <!--   <div id=textareaC>  --> 
   <!--</div> -->
 
-
     
-  <div id=title2>
-    <h2>Response Body</h2>
-  </div>
-  <div id=textarea>
-    <textarea id="textarea3">
-      <?php 
-          if($_POST) {
-              print_r($decoded);
-          } 
-          else
-          {  
-              echo "Response Body";
-          }
-      ?>
-  </textarea>
-  </div>
+  <!-- Response -->
+  <div id="title2">
+            <h2>Response Body</h2>
+        </div>
+        <div id="textarea">
+            <textarea id="textarea3"><?php 
+                    if($_POST) {
+                        print_r($decoded);
+                    } 
+                    else
+                    {  
+                        echo "Response Body";
+                    }
+                ?>
+            </textarea>
+        </div>
   <!-- dropdown  -->
   <script src="js/script.js"></script>
 
