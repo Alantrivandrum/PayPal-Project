@@ -3,28 +3,26 @@
 if ($_POST) // If form was submited...
 {
     $api_endpoint = $_POST["api_endpoint"];
-    $request_body = $_POST["request_body"]; // Get it into a variable
-    // print_r( "Api Enpoint: " . $api_endpoint); // Print it!
-    // print_r('<br>');
-    // print_r("Request Body: " . $request_body);
-    //print_r($_POST);
+    $request_body = $_POST["request_body"];
 
     $url = $api_endpoint;
 
-    $data_array = json_decode($request_body, true);
-    $data = http_build_query($data_array);
-
     $ch = curl_init();
 
-    $headers = array(
-        "Content-Type: application/json",
-        "Authorization: Bearer ",
+    curl_setopt_array($ch, array(
+        CURLOPT_URL => "https://api.sandbox.paypal.com/v2/checkout/orders",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_SSL_VERIFYHOST => false,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_HEADER => false,
+        CURLOPT_HTTPHEADER => array(
+          "Content-Type: application/json",
+          "prefer:return=representation",
+          "Authorization: Bearer " . $_SESSION['access_token']
+        ),
+        CURLOPT_POSTFIELDS => $request_body)
     );
-
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $res = curl_exec($ch);
 
