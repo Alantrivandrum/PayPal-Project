@@ -147,6 +147,13 @@
                 document.getElementById("textarea2").value = 'Braintree';
                 document.getElementById("textarea3").value = 'Braintree';
                 break;
+                
+            case "accessToken":
+                document.getElementById("textarea1").value = 'https://api-m.sandbox.paypal.com/v1/oauth2/token';
+                document.getElementById("textarea2").value = '';
+                document.getElementById("textarea3").value = 'Access Token';
+                break;
+
            
                 // Payments
             case "createOrder":
