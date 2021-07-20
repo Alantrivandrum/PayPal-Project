@@ -46,6 +46,7 @@
   </button>
 
   <div class="dropdown-container">
+    <a onclick="ChangeText('accessToken');">Access Token</a>
       <button class="dropdown-btn">Payments
           <i class="fa fa-caret-down"></i>
       </button>
