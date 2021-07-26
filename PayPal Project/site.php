@@ -34,6 +34,19 @@
                 <textarea>Live credentials have been disabled:&#10;Username:&#10;Password:&#10;Signature:</textarea>
             </div>
 
+            <!--  -->
+            <?php if(isset($_SESSION['id']))
+            { ?>
+                <script>
+                    var client_id = '<?php echo $_SESSION['id'];?>';
+                </script>
+            <?php } 
+            else { ?>
+                <script>
+                    var client_id = '{{id}}'
+                </script>
+            <?php } ?>
+
             <form method="POST">
                 <input type="hidden" value="uh oh" name="request_name" id="request">
 
