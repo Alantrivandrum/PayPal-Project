@@ -25,15 +25,14 @@ $err = curl_error($curl);
 curl_close($curl);
 
 if ($err) {
-    echo $err;
+  echo $err;
 }
 else
 {
-  $response = json_decode($response, true);
+  $response = json_decode($response);
 
   $id = $response->id;
   $_SESSION['id'] = $id;
-  var_dump($response->links[1]);
 }
 
 ?>

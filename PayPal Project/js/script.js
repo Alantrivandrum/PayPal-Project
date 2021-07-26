@@ -147,7 +147,7 @@ function changeText(content) {
             document.getElementById("request").value = 'CP';
             break;
         case "showOrder":
-            document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/{id}';
+            document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/' + client_id;
             document.getElementById("textarea2").value = '';
             document.getElementById("textarea3").value = 'Show Order';
             break;
