@@ -144,6 +144,7 @@ function changeText(content) {
             document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders';
             document.getElementById("textarea2").value = JSON.stringify(createOrder,null,4);
             document.getElementById("textarea3").value = 'Create Order';
+            document.getElementById("request").value = 'CP';
             break;
         case "showOrder":
             document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/{id}';
@@ -154,6 +155,7 @@ function changeText(content) {
             document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/{id}/capture';
             document.getElementById("textarea2").value = '';
             document.getElementById("textarea3").value = 'Capture Order';
+            document.getElementById("request").value = 'CO';
             break;
         case "authoriseOrder":
             document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/{id}/authorize';

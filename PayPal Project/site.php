@@ -35,6 +35,8 @@
             </div>
 
             <form method="POST">
+                <input type="hidden" value="uh oh" name="request_name" id="request">
+
                 <div id="title1">
                     <h2>API Endpoint</h2>
                 </div>
@@ -47,7 +49,7 @@
 
                 <!-- Pay Button -->
                 <div id="button"> 
-                    <input type="submit" value="Submit" class="button"></button>
+                    <input type="submit" value="Submit" class="button">
                 </div>
             </form>
         </div>
@@ -59,7 +61,7 @@
         <div id="textarea">
             <textarea id="textarea3"><?php 
                     if($_POST) {
-                        print_r($decoded);
+                        print_r($response);
                     } 
                     else
                     {  
