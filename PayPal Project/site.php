@@ -34,18 +34,22 @@
                 <textarea>Live credentials have been disabled:&#10;Username:&#10;Password:&#10;Signature:</textarea>
             </div>
 
-            <!--  -->
-            <?php if(isset($_SESSION['id']))
+            <!-- Save client_id when it exists -->
+            <?php 
+            if(isset($_SESSION['id']))
             { ?>
                 <script>
-                    var client_id = '<?php echo $_SESSION['id'];?>';
+                    var order_id = '<?php echo $_SESSION['id']; ?>';
                 </script>
-            <?php } 
-            else { ?>
+            <?php 
+            } 
+            else 
+            { ?>
                 <script>
-                    var client_id = '{{id}}'
+                    var order_id = '{{id}}'
                 </script>
-            <?php } ?>
+            <?php 
+            } ?>
 
             <form method="POST">
                 <input type="hidden" value="uh oh" name="request_name" id="request">
@@ -73,13 +77,13 @@
         </div>
         <div id="textarea">
             <textarea id="textarea3"><?php 
-                    if($_POST) {
-                        print_r($response);
-                    } 
-                    else
-                    {  
-                        echo "Response Body";
-                    }
+                if($_POST) {
+                    print_r($response);
+                } 
+                else
+                {  
+                    echo "Response Body";
+                }
                 ?>
             </textarea>
         </div>
@@ -107,7 +111,7 @@
                     <a onclick="changeText('showOrder');">Show Order</a>
                     <a onclick="changeText('captureOrder');">Capture Order</a>
                     <a onclick="changeText('authoriseOrder');">Authorise Order</a>
-                    <a onclick="changeText('refund');">Refund</a>
+                    <a onclick="changeText('refundOrder');">Refund</a>
                 </div>
           
                 <button class="dropdown-btn">Reference Transactions

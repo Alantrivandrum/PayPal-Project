@@ -144,28 +144,31 @@ function changeText(content) {
             document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders';
             document.getElementById("textarea2").value = JSON.stringify(createOrder,null,4);
             document.getElementById("textarea3").value = 'Create Order';
-            document.getElementById("request").value = 'CP';
+            document.getElementById("request").value = 'CreateOrder';
             break;
         case "showOrder":
-            document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/' + client_id;
+            document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/' + order_id;
             document.getElementById("textarea2").value = '';
             document.getElementById("textarea3").value = 'Show Order';
+            document.getElementById("request").value = 'ShowOrder';
             break;
         case "captureOrder":
-            document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/{id}/capture';
+            document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/' + order_id + '/capture';
             document.getElementById("textarea2").value = '';
             document.getElementById("textarea3").value = 'Capture Order';
-            document.getElementById("request").value = 'CO';
+            document.getElementById("request").value = 'CaptureOrder';
             break;
         case "authoriseOrder":
-            document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/{id}/authorize';
+            document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/' + order_id + '/authorize';
             document.getElementById("textarea2").value = '';
             document.getElementById("textarea3").value = 'Authorise Order';
+            document.getElementById("request").value = 'AuthoriseOrder';
             break;
-        case "refund":
-            document.getElementById("textarea1").value = endpoint + '/v2/payments/captures/{{capture_id}}/refund';
+        case "refundOrder":
+            document.getElementById("textarea1").value = endpoint + '/v2/payments/captures/' + order_id + '/refund';
             document.getElementById("textarea2").value = '';
             document.getElementById("textarea3").value = 'Refund';
+            document.getElementById("request").value = 'RefundOrder';
             break;
 
         // Reference Transactions
