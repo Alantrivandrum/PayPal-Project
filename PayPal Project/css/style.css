@@ -20,9 +20,22 @@ form{
     text-align: center;
 }
 
-/*div {text-align: center;}*/
 select {
     font-size: 20;
+}
+
+textarea {
+    width: 420px;
+    height: 120px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--boxblue);
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+body {
+    font-family: "Lato", sans-serif;
 }
 
 #title1 {
@@ -36,35 +49,35 @@ select {
     margin-top: 125px;
     text-align: center;
 }
+
 #textarea {
     display: flex;
     justify-content: center;
 }
 
-textarea {
-    width: 420px;
-    height: 120px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: var(--boxblue);
+#textarea2 {
+    width: 42em;
+    height: 16em;
     border-radius: 10px;
-    padding-left: 10px;
-  
+}
+#textarea3 {
+    width: 42em;
+    height: 16em;
+    border-radius: 10px;
 }
 
-#test {
+#textarea1 {
+    width: 42em;
+    height: 1em;
+}
+
+#textarea4 {
     display: inline-block;
     position: fixed;
-    /* margin-right: 1000px; */
     margin-top:120px ;
     left: 210px;
     height: 200px;
     width: 200px;
-}
-
-
-body {
-    font-family: "Lato", sans-serif;
 }
 
 #logo {
@@ -120,25 +133,6 @@ body {
     }
 }
 
-body {
-    font-family: "Lato", sans-serif;
-}
-
-#textarea2 {
-    width: 42em;
-    height: 16em;
-    border-radius: 10px;
-}
-#textarea3 {
-    width: 42em;
-    height: 16em;
-    border-radius: 10px;
-}
-
-#textarea1 {
-    width: 42em;
-    height: 1em;
-}
 /* Fixed sidenav, full height */
 .sidenav {
     height: 100%;

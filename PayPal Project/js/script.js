@@ -28,7 +28,15 @@
               "value": "100.00"
             }
           }
-        ]
+        ],
+        "application_context": {
+          "brand_name": "AMIKADO",
+          "locale": "en-EN",
+          "shipping_preference": "GET_FROM_FILE",
+          "user_action": "PAY_NOW",
+          "return_url": "http://example.com/return",
+          "cancel_url": "http://example.com/cancel"
+          }
       }
 
     let createToken = {

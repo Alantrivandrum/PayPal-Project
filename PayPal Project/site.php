@@ -1,8 +1,10 @@
+<?php 
+session_start();
+include 'php/access_token.php';
+include 'php/request.php'; 
+?>
 
 <!DOCTYPE html>
-<?php session_start(); ?>
-<?php //include 'php/access_token.php'; ?> 
-<?php include 'php/request.php'; ?>
 
 <html>
 
@@ -28,26 +30,80 @@
     
     <!-- API Endpoint and Request -->
     <div id="textarea">
-        <div id="textarea4">
-            <textarea>Live credentials have been disabled:&#10;Username:&#10;Password:&#10;Signature:</textarea>
-        </div>
+      <div id="textarea4">
+        <textarea>Live credentials have been disabled:&#10;Username:&#10;Password:&#10;Signature:</textarea>
+      </div>
 
-        <!-- Save order_id when it exists -->
-        <?php 
-        if(isset($_SESSION['id']))
-        { ?>
-            <script>
-                var order_id = '<?php echo $_SESSION['id']; ?>';
-            </script>
-        <?php 
-        } 
-        else 
-        { ?>
-            <script>
-                var order_id = '{{id}}';
-            </script>
-        <?php 
-        } ?>
+      <!-- Save order_id when it exists -->
+      <?php 
+      if(isset($_SESSION['id']))
+      { ?>
+          <script>
+              var order_id = '<?php echo $_SESSION['id']; ?>';
+          </script>
+      <?php 
+      } 
+      else 
+      { ?>
+          <script>
+              var order_id = '{{id}}';
+          </script>
+      <?php 
+      } ?>
+
+      <?php 
+      if(isset($_SESSION['capture_id']))
+      { ?>
+          <script>
+              var capture_id = '<?php echo $_SESSION['capture_id']; ?>';
+          </script>
+      <?php 
+      } 
+      else 
+      { ?>
+          <script>
+              var capture_id = '{{id}}';
+          </script>
+      <?php 
+      } ?>
+    
+      <form method="POST">
+        <input type="hidden" value="uh oh" name="request_name" id="request">
+
+        <div id="title1">
+          <h2>API Endpoint</h2>
+        </div>
+        <textarea id="textarea1" name="api_endpoint">API Endpoint</textarea>
+
+        <div id="title1">
+          <h2>Request Body</h2>
+        </div>
+        <textarea id="textarea2" name="request_body">Request Body</textarea>
+
+        <div>
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+    
+  <!-- Response -->
+  <div id="title2">
+    <h2>Response Body</h2>
+  </div>
+  <div id="textarea">
+      <textarea id="textarea3"><?php 
+          if($_POST) 
+          {
+              print_r($response);
+          } 
+          else
+          {  
+              echo "Response Body";
+          }
+          ?>
+      </textarea>
+  </div>
+
   <div class="sidenav">
     <button class="dropdown-btn">Product
       <i class="fa fa-caret-down"></i>
@@ -58,20 +114,20 @@
     </div>
     <button class="dropdown-btn">Requests
       <i class="fa fa-caret-down"></i>
-  </button>
+    </button>
 
-  <div class="dropdown-container">
-    <a onclick="ChangeText('accessToken');">Access Token</a>
-      <button class="dropdown-btn">Payments
-          <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-container">
-          <a onclick="ChangeText('createOrder');">Create Order</a>
-          <a onclick="ChangeText('showOrder');">Show Order</a>
-          <a onclick="ChangeText('captureOrder');">Capture Order</a>
-          <a onclick="ChangeText('authoriseOrder');">Authorise Order</a>
-          <a onclick="ChangeText('refund');">Refund</a>
-      </div>
+    <div class="dropdown-container">
+      <a onclick="ChangeText('accessToken');">Access Token</a>
+        <button class="dropdown-btn">Payments
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a onclick="ChangeText('createOrder');">Create Order</a>
+            <a onclick="ChangeText('showOrder');">Show Order</a>
+            <a onclick="ChangeText('captureOrder');">Capture Order</a>
+            <a onclick="ChangeText('authoriseOrder');">Authorise Order</a>
+            <a onclick="ChangeText('refund');">Refund</a>
+        </div>
 
       <button class="dropdown-btn">Reference Transactions
           <i class="fa fa-caret-down"></i>
@@ -96,7 +152,7 @@
           <a onclick="ChangeText('suspendSubscription');">Suspend Subscription</a>
           <a onclick="ChangeText('authoriseSubscription');">Authorise Subscription</a>
       </div>
-  </div>
+    </div>
     <button class="dropdown-btn">Credentials
       <i class="fa fa-caret-down"></i>
     </button>
@@ -107,125 +163,20 @@
       </button>
 
       <div class="dropdown-container">
-        <a onclick="ChangeText('CRI_US');">CRI-US Business Verified 3.0-DG</a>
-        <a onclick="ChangeText('CRI_UK');">CRI-US Business Verified</a>
-        <a onclick="ChangeText('CRI-IT');">CRI-IT Business Verified</a>
-        <a onclick="ChangeText('CRI-FR');">CRI-FR Premier Verified</a>
-        <a onclick="ChangeText('CRI-DE');">CRI-DE Business Verified</a>
-        <a onclick="ChangeText('CRI-US');">CRI-US Airline Account</a>
-
-    </div>
+          <a onclick="ChangeText('CRI_US');">CRI-US Business Verified 3.0-DG</a>
+          <a onclick="ChangeText('CRI_UK');">CRI-US Business Verified</a>
+          <a onclick="ChangeText('CRI-IT');">CRI-IT Business Verified</a>
+          <a onclick="ChangeText('CRI-FR');">CRI-FR Premier Verified</a>
+          <a onclick="ChangeText('CRI-DE');">CRI-DE Business Verified</a>
+          <a onclick="ChangeText('CRI-US');">CRI-US Airline Account</a>
+      </div>
 
     <a onclick="changeText();">Search</a>
         </div>
 
-
-   <!-- <div class="dropdown-container">
-    <input type ="checkbox" id ="collapsible-head">
-    <label for ="collapsible-head">Enter below</label>
-    <div class ="collapsible-text"></div>
-    <button class="Preloaded-Accounts">Preloaded Accounts
-    <i class="fa fa-caret-down"></i>
-      </button>
-     <a href ="CRI_US#">CRI-US Buisness Verified 3.0-DG</a>   
-      <p>
-        Username:
-        Password:
-        Signature:
-       </p>
-
-       <div id=textarea>
-        <textarea name ="credentials" id = textarea0>Live credentials have been disabled
-                                                     Username:
-                                                     Password:
-                                                     Signature:
-                                                    
-    </textarea>
-    </div>-->
-
-
-
-
-     
-        <!-- <a href ="creatOrder#">User</a> 
-        <a href ="showOrder#">Show Order</a>
-      <a href ="capturePayment#">Capture Payment</a>
-      -->
-
-
-
     </div>
   </div>
-  <!-- <div id="test">
-    <textarea>Live credentials have been disabled:
-Username:
-Password:
-Signature:</textarea>
-  </div> -->
-  <div id=title1>
-    <h2>Request</h2>
-  </div>
- 
 
-
- <div id=textarea>
-   
-  <!--<textarea name ="credentials" id = textarea0>
-    Live credentials have been disabled:
-    Username:
-    Password:
-    Signature:
-  </textarea>-->
-
-
-
-        <form method="post">
-            Api Endpoint: <br>
-            <div id=textarea>
-                <textarea name ="api_endpoint" id = textarea1>API Endpoint</textarea>
-            </div>
-            <input type="hidden" value="uh oh" name="request_name" id="request">
-            </br>
-            Request Body: <br>
-            <textarea name ="request_body" id = textarea2 >Request Body and Headers</textarea>
-            </br>
-
-            <input type="submit" value="Submit" />
-        </form>
-    </div>
-
-    
-    
-     <!--
-    <form action ="/cat2/PayPal Project/php/request.php" method = "POST">
-        
-        <textarea name ="API Endpoint:2" ></textarea>
-        <br>
-        <input type = "submit" value = "Submit" >
-        </form>
-     -->
-
-    <!--   <div id=textareaC>  --> 
-  <!--</div> -->
-
-    
-  <!-- Response -->
-  <div id="title2">
-            <h2>Response Body</h2>
-  </div>
-  <div id="textarea">
-      <textarea id="textarea3"><?php 
-          if($_POST) 
-          {
-              print_r($response);
-          } 
-          else
-          {  
-              echo "Response Body";
-          }
-          ?>
-      </textarea>
-  </div>
   <!-- dropdown  -->
   <script src="js/script.js"></script>
 
