@@ -2,7 +2,7 @@
 
 if ($_POST)
 {
-    switch(isset($_POST['request_name']))
+    switch($_POST['request_name'])
     {
         case "CreateOrder":
             include 'php/create_order.php';
@@ -18,9 +18,6 @@ if ($_POST)
             break;
         case "RefundOrder":
             include 'php/refund_order.php';
-            break;
-        default:
-            echo "****************ERROR****************";
             break;
     }
 }

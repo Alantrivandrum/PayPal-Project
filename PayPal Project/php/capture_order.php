@@ -1,9 +1,11 @@
 <?php
 
+$data = "";
+
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.sandbox.paypal.com/v2/checkout/orders/". $_SESSION['id'] . "/authorize",
+  CURLOPT_URL => "https://api.sandbox.paypal.com/v2/checkout/orders/". $_SESSION['id'] . "/capture",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_SSL_VERIFYHOST => false,
   CURLOPT_SSL_VERIFYPEER => false,
@@ -22,20 +24,16 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
-if ($err) {
+if ($err) 
+{
   echo $err;
 }
 else
 {
+  $response = json_decode($response);
 
-  $response = "world";
-  
-  //  echo "<pre>";
-  //   print_r($response);
+  $capture_id = $response->purchase_units[0]->payments->captures[0]->id;
+  $_SESSION['capture_id'] = $capture_id;
+}
 
-  //  $response = json_decode($response);
-
-  //  $authorise_id_id = $response->purchase_units[0]->payments->authorizations[0]->id;
-  //  $_SESSION['authorise_id'] = $authorise_id;
-}    
 ?>

@@ -34,7 +34,7 @@
                 <textarea>Live credentials have been disabled:&#10;Username:&#10;Password:&#10;Signature:</textarea>
             </div>
 
-            <!-- Save client_id when it exists -->
+            <!-- Save order_id when it exists -->
             <?php 
             if(isset($_SESSION['id']))
             { ?>
@@ -46,7 +46,24 @@
             else 
             { ?>
                 <script>
-                    var order_id = '{{id}}'
+                    var order_id = '{{id}}';
+                </script>
+            <?php 
+            } ?>
+
+            <!-- Save capture_id when it exists -->
+            <?php 
+            if(isset($_SESSION['capture_id']))
+            { ?>
+                <script>
+                    var capture_id = '<?php echo $_SESSION['capture_id']; ?>';
+                </script>
+            <?php 
+            } 
+            else 
+            { ?>
+                <script>
+                    var capture_id = '{{capture_id}}'
                 </script>
             <?php 
             } ?>

@@ -3,8 +3,8 @@
 $curl = curl_init();
 
 // Bianca's
-$clientId = "AWr7g4AYGMxymbEAddYt9cCVWrF1auC_BLMk5YZwYZHANsjJeemz4YCnUFdofo7D0FSO8f_l6qz6N8Ld";
-$secret = "EF1mTjVtnGTQIyGhbs_K-I-csejVntImu6F95KX1SGrGD5GU6FlnxWOSS5IfS6FzEEmvLxf2ZhSCVjK3";
+$clientId = "AT0s-es2wc037nBBYq0PLV6Icb_NcHbUw_1bXu6A-lm4rKL_OMR3eER_8HFgUysxNaUFuerGLa_PtdeW";
+$secret = "EAvquCPScqQn67CG0LMR1IHIWpVGxbNThJnTJVIbGF5XBeqO66-X7nOv8VLqwDNHJ2VamB-nLIeIWAdR";
 
 // Koushik's
 // $clientId = "AZvubSw7L5L7bnKqQ2NvOuodHa9QiZN-I63jG02dKqkoKRqrhcwjpu0loYZHCLDjR-XyIs6bo1zYSMxK";
@@ -25,18 +25,19 @@ curl_setopt_array($curl, array(
    ),
 ));
 
-$res = curl_exec($curl);
+$response = curl_exec($curl);
 $err = curl_error($curl);
 
 curl_close($curl);
 
-if ($err) {
+if ($err)
+{
   echo $err;
 } 
 else
 {
-  $res = json_decode($res);
+  $response = json_decode($response);
 
-  $access_token = $res->access_token;
+  $access_token = $response->access_token;
   $_SESSION['access_token'] = $access_token;
 }

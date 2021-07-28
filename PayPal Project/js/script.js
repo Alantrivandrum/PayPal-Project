@@ -27,7 +27,16 @@ let createOrder = {
             "value": "100.00"
         }
         }
-    ]
+    ],
+    "application_context": {
+        "brand_name": "AMIKADO",
+        "locale": "en-EN",
+        "shipping_preference": "GET_FROM_FILE",
+        "user_action": "PAY_NOW",
+
+        "return_url": "http://example.com/return",
+        "cancel_url": "http://example.com/cancel"
+    }
 }
 
 let createToken = {
@@ -165,7 +174,7 @@ function changeText(content) {
             document.getElementById("request").value = 'AuthoriseOrder';
             break;
         case "refundOrder":
-            document.getElementById("textarea1").value = endpoint + '/v2/payments/captures/' + order_id + '/refund';
+            document.getElementById("textarea1").value = endpoint + '/v2/payments/captures/' + capture_id + '/refund';
             document.getElementById("textarea2").value = '';
             document.getElementById("textarea3").value = 'Refund';
             document.getElementById("request").value = 'RefundOrder';
