@@ -2,13 +2,8 @@
 
 $curl = curl_init();
 
-// Bianca's
-$clientId = "AT0s-es2wc037nBBYq0PLV6Icb_NcHbUw_1bXu6A-lm4rKL_OMR3eER_8HFgUysxNaUFuerGLa_PtdeW";
-$secret = "EAvquCPScqQn67CG0LMR1IHIWpVGxbNThJnTJVIbGF5XBeqO66-X7nOv8VLqwDNHJ2VamB-nLIeIWAdR";
-
-// Koushik's
-// $clientId = "AZvubSw7L5L7bnKqQ2NvOuodHa9QiZN-I63jG02dKqkoKRqrhcwjpu0loYZHCLDjR-XyIs6bo1zYSMxK";
-// $secret = "EHu93ip4EvuMo5XjCmVAavBuVJC2WKRPRlxI_VdLyJQYgvK9u59gCxAN3GMPo2KPmoTvepQCn_ZizBeb";
+$clientId="AZvubSw7L5L7bnKqQ2NvOuodHa9QiZN-I63jG02dKqkoKRqrhcwjpu0loYZHCLDjR-XyIs6bo1zYSMxK";
+$secret="EHu93ip4EvuMo5XjCmVAavBuVJC2WKRPRlxI_VdLyJQYgvK9u59gCxAN3GMPo2KPmoTvepQCn_ZizBeb";
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://api.sandbox.paypal.com/v1/oauth2/token",
@@ -22,7 +17,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTPHEADER => array(
     "Accept: application/json",
     "Accept-Language: en_US",
-   ),
+   )
 ));
 
 $response = curl_exec($curl);
@@ -41,3 +36,5 @@ else
   $access_token = $response->access_token;
   $_SESSION['access_token'] = $access_token;
 }
+
+?>

@@ -5,13 +5,13 @@ if ($_POST)
     switch($_POST['request_name'])
     {
         case "CreateOrder":
-            include 'php/create_order.php';
+            include 'php/create_payment.php';
             break;
         case "ShowOrder":
             include 'php/show_order.php';
             break;
         case "CaptureOrder":
-            include 'php/capture_order.php';
+            include 'php/capture_payment.php';
             break;
         case "AuthoriseOrder":
             include 'php/authorise_order.php';
@@ -21,5 +21,5 @@ if ($_POST)
             break;
     }
 }
-
+// $api_endpoint = $response["links"][0]["href"];
 ?>
