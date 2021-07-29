@@ -162,7 +162,6 @@ function ChangeText(content) {
       document.getElementById("textarea2").value = 'Braintree';
       document.getElementById("textarea3").value = 'Braintree';
       break;
-
     // Payments
     case "createOrder":
       document.getElementById("textarea1").value = 'https://api-m.sandbox.paypal.com/v2/checkout/orders';
@@ -277,4 +276,46 @@ function ChangeText(content) {
       document.getElementById("textarea3").value = 'Error';
       break;
   }
+} 
+
+function HidetextPP(){
+  var x = document.getElementById("PayPal");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
 }
+
+function HidetextBT(){
+  var x = document.getElementById("Braintree");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+// **************TESTING*******************
+function Hidetext(test){
+  switch(test){
+    case 'PayPal':
+    var x = document.getElementById("PayPal");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  break;
+
+  case 'Braintree':
+    var x = document.getElementById("Braintree");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  break;
+}
+}
+  
