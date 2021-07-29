@@ -69,7 +69,7 @@ include 'php/request.php';
     } ?>
 
     <form method="POST">
-      <input type="hidden" value="uh oh" name="request_name" id="request">
+      <input type="hidden" value="" name="request_name" id="request">
 
       <div id="title1">
         <h2>API Endpoint</h2>
@@ -127,7 +127,7 @@ include 'php/request.php';
             <a onclick="ChangeText('showOrder');">Show Order</a>
             <a onclick="ChangeText('captureOrder');">Capture Order</a>
             <a onclick="ChangeText('authoriseOrder');">Authorise Order</a>
-            <a onclick="ChangeText('refund');">Refund</a>
+            <a onclick="ChangeText('refundOrder');">Refund</a>
         </div>
 
       <button class="dropdown-btn">Reference Transactions

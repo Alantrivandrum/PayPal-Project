@@ -1,7 +1,5 @@
 <?php
 
-$data = "";
-
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
@@ -9,31 +7,34 @@ curl_setopt_array($curl, array(
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_SSL_VERIFYHOST => false,
   CURLOPT_SSL_VERIFYPEER => false,
-  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HEADER => false,
   CURLOPT_HTTPHEADER => array(
     "Content-Type: application/json",
     "prefer:return=representation",
     "Authorization: Bearer " . $_SESSION['access_token']
-  ),
-  CURLOPT_POSTFIELDS => $data)
-);
+  )
+));
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
 curl_close($curl);
 
-if ($err) 
+if ($err)
 {
   echo $err;
 }
 else
-{
+{    
   $response = json_decode($response);
 
-  $capture_id = $response->purchase_units[0]->payments->captures[0]->id;
-  $_SESSION['capture_id'] = $capture_id;
-}    
-
-?>
+  if ($response == "")
+  {
+    $response = "200 OK";
+  }
+  else
+  {
+    $response = "ERROR"
+  }
+}

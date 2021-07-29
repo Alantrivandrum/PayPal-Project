@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.sandbox.paypal.com/v2/checkout/orders/". $_SESSION['id'],
+  CURLOPT_URL => $_POST['api_endpoint'],
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_SSL_VERIFYHOST => false,
   CURLOPT_SSL_VERIFYPEER => false,
@@ -27,5 +27,5 @@ if ($err)
 }
 else
 {    
-    $response = json_decode($response);
+  $response = json_decode($response);
 }

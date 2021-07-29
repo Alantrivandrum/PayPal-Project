@@ -5,7 +5,7 @@ $data = "";
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.sandbox.paypal.com/v2/payments/authorizations/".$_SESSION['authorise_id']."/a",
+  CURLOPT_URL => $_POST['api_endpoint'],
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_SSL_VERIFYHOST => false,
   CURLOPT_SSL_VERIFYPEER => false,
