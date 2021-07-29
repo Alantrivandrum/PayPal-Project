@@ -1,8 +1,9 @@
-
 <!DOCTYPE html>
+<?php //include 'php/access_token.php'; ?> 
+<?php include 'php/request.php'; ?>
+
+
 <html>
-
-
 
 <head>
   <meta charset="UTF-8" />
@@ -32,18 +33,20 @@
              </form>
         -->
 
+
   <div class="sidenav">
     <button class="dropdown-btn">Product
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
-      <a onclick="ChangeText('paypal');">PayPal</a>
-      <a onclick="ChangeText('braintree');">Braintree</a>
+      <a onclick="Hidetext('PayPal');">PayPal</a>
+      <a onclick="Hidetext('Braintree');">Braintree</a>
     </div>
-    <button class="dropdown-btn">Requests
+    <div id = "PayPal" class="dropdown-container">
+    <button class="dropdown-btn">Requests PP
       <i class="fa fa-caret-down"></i>
   </button>
-
+    
   <div class="dropdown-container">
       <button class="dropdown-btn">Payments
           <i class="fa fa-caret-down"></i>
@@ -80,23 +83,89 @@
           <a onclick="ChangeText('authoriseSubscription');">Authorise Subscription</a>
       </div>
   </div>
-    <button class="dropdown-btn">Dropdown
+  </div>
+<!-- ****************BRAINTREE TESTINGS****************** -->
+  <div id = "Braintree" class="dropdown-container">
+    <button class="dropdown-btn">Requests BT
+      <i class="fa fa-caret-down"></i>
+  </button>
+    
+  <div class="dropdown-container">
+      <button class="dropdown-btn">Payments
+          <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+          <a onclick="ChangeText('createOrder');">Create Order</a>
+          <a onclick="ChangeText('showOrder');">Show Order</a>
+          <a onclick="ChangeText('captureOrder');">Capture Order</a>
+          <a onclick="ChangeText('authoriseOrder');">Authorise Order</a>
+          <a onclick="ChangeText('refund');">Refund</a>
+      </div>
+
+      <button class="dropdown-btn">Reference Transactions
+          <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+          <a onclick="ChangeText('createToken');">Create Token</a>
+          <a onclick="ChangeText('showDetails');">Show Details</a>
+          <a onclick="ChangeText('createAgreement');">Create Agreement</a>
+          <a onclick="ChangeText('showAgreement');">Show Agreement</a>
+          <a onclick="ChangeText('cancelAgreement');">Cancel Agreement</a>
+      </div>
+
+      <button class="dropdown-btn">Subscriptions
+          <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+          <a onclick="ChangeText('createProduct');">Create Product</a>
+          <a onclick="ChangeText('createPlan');">Create Plan</a>
+          <a onclick="ChangeText('activatePlan');">Activate Plan</a>
+          <a onclick="ChangeText('createSubscription');">Create Subscription</a>
+          <a onclick="ChangeText('activateSubscription');">Activate Subscription</a>
+          <a onclick="ChangeText('suspendSubscription');">Suspend Subscription</a>
+          <a onclick="ChangeText('authoriseSubscription');">Authorise Subscription</a>
+      </div>
+  </div>
+  </div>
+  
+    <button class="dropdown-btn">Credentials
       <i class="fa fa-caret-down"></i>
     </button>
+
     <div class="dropdown-container">
-      
-      <a href ="createOrder#">Create Order</a>
-      <a href ="showOrder#">Show Order</a>
-      <a href ="capturePayment#">Capture Payment</a>
-      
+      <button class="dropdown-btn">Preloaded Accounts
+          <i class="fa fa-caret-down"></i>
+      </button>
+
+      <div class="dropdown-container">
+        <a onclick="ChangeText('CRI_US');">CRI-US Business Verified 3.0-DG</a>
+        <a onclick="ChangeText('CRI_UK');">CRI-US Business Verified</a>
+        <a onclick="ChangeText('CRI_IT');">CRI-IT Business Verified</a>
+        <a onclick="ChangeText('CRI_FR');">CRI-FR Premier Verified</a>
+        <a onclick="ChangeText('CRI_DE');">CRI-DE Business Verified</a>
+        <a onclick="ChangeText('CRI_USA');">CRI-US Airline Account</a>
+
+    </div>
+
+    <a onclick="changeText();">Search</a>
+        </div>
     </div>
   </div>
-
   <div id=title1>
     <h2>Request</h2>
   </div>
+ 
  <div id=textarea>
-        <form action="/cat2/PayPal Project/php/request.php" method="post">
+
+  <div id="test">
+    <textarea id = textarea4>Live credentials have been disabled:
+Username:
+Password:
+Signature:</textarea>
+  </div>
+
+
+        <form method="post">
             Api Endpoint: <br>
             <div id=textarea>
                 <textarea name ="api_endpoint" id = textarea1>API Endpoint</textarea>
@@ -109,6 +178,8 @@
             <input type="submit" value="Submit" />
         </form>
     </div>
+
+    
     
      <!--
     <form action ="/cat2/PayPal Project/php/request.php" method = "POST">
@@ -119,12 +190,26 @@
         </form>
      -->
 
+    <!--   <div id=textareaC>  --> 
+  <!--</div> -->
 
-  <div id=title2>
-    <h2>Response Body</h2>
+    
+  <!-- Response -->
+  <div id="title2">
+            <h2>Response Body</h2>
   </div>
-  <div id=textarea>
-    <textarea id=textarea3>Response Body</textarea>
+  <div id="textarea">
+      <textarea id="textarea3"><?php 
+          if($_POST) 
+          {
+              print_r($response);
+          } 
+          else
+          {  
+              echo "Response Body";
+          }
+          ?>
+      </textarea>
   </div>
   <!-- dropdown  -->
   <script src="js/script.js"></script>
