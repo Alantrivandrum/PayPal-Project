@@ -35,6 +35,8 @@ else
   }
   else
   {
-    $response = "ERROR"
+    $response = "ERROR";
   }
 }
+
+?>

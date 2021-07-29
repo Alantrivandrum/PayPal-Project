@@ -67,7 +67,7 @@ JSON Requests*/
       }
 
       let createAgreement = {
-        "token_id": "{token_id}"
+        "token_id": token_id
       }
 
       let createProduct = {
@@ -145,127 +145,133 @@ JSON Requests*/
         }
       }
 
-    /* Change content in textareas when clicking a certain dropdown button */
-    function ChangeText(content) {
-    
-        switch(content) {
-            case "paypal":
-                document.getElementById("textarea1").value = 'PayPal';
-                document.getElementById("textarea2").value = 'PayPal';
-                document.getElementById("textarea3").value = 'PayPal';
-                break;
-            case "braintree":
-                document.getElementById("textarea1").value = 'Braintree';
-                document.getElementById("textarea2").value = 'Braintree';
-                document.getElementById("textarea3").value = 'Braintree';
-                break;
-                
-            case "accessToken":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/oauth2/token';
-                document.getElementById("textarea2").value = '';
-                document.getElementById("textarea3").value = 'Access Token';
-                break;
+/* Change content in textareas when clicking a certain dropdown button */
+function ChangeText(content) {
 
-           
-            // Payments
-            case "createOrder":
-                document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders';
-                document.getElementById("textarea2").value = JSON.stringify(createOrder,null,4);
-                document.getElementById("textarea3").value = 'Create Order';
-                document.getElementById("request").value = 'CreateOrder';
-                break;
-            case "showOrder":
-                document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/' + order_id;
-                document.getElementById("textarea2").value = '';
-                document.getElementById("textarea3").value = 'Show Order';
-                document.getElementById("request").value = 'ShowOrder';
-                break;
-            case "captureOrder":
-                document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/' + order_id + '/capture';
-                document.getElementById("textarea2").value = '';
-                document.getElementById("textarea3").value = 'Capture Order';
-                document.getElementById("request").value = 'CaptureOrder';
-                break;
-            case "authoriseOrder":
-                document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/' + order_id + '/authorize';
-                document.getElementById("textarea2").value = '';
-                document.getElementById("textarea3").value = 'Authorise Order';
-                document.getElementById("request").value = 'AuthoriseOrder';
-                break;
-            case "refundOrder":
-                document.getElementById("textarea1").value = endpoint + '/v2/payments/captures/' + capture_id + '/refund';
-                document.getElementById("textarea2").value = '';
-                document.getElementById("textarea3").value = 'Refund';
-                document.getElementById("request").value = 'RefundOrder';
-                break;
+  switch(content) {
+    case "paypal":
+      document.getElementById("textarea1").value = 'PayPal';
+      document.getElementById("textarea2").value = 'PayPal';
+      document.getElementById("textarea3").value = 'PayPal';
+      break;
 
-            // Reference Transactions
-            case "createToken":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/billing-agreements/agreement-tokens';
-                document.getElementById("textarea2").value = JSON.stringify(createToken,null,4);
-                document.getElementById("textarea3").value = 'Create Token';
-                break;
-            case "showDetails":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/billing-agreements/agreement-tokens/{{token_id}}';
-                document.getElementById("textarea2").value = '';
-                document.getElementById("textarea3").value = 'Show Details';
-                break;
-            case "createAgreement":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/billing-agreements/agreements';
-                document.getElementById("textarea2").value = JSON.stringify(createAgreement,null,4);
-                document.getElementById("textarea3").value = 'Create Agreement';
-                break;
-            case "showAgreement":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/billing-agreements/agreements/{{agreement_id}}';
-                document.getElementById("textarea2").value = '';
-                document.getElementById("textarea3").value = 'Show Agreement';
-                break;
-            case "cancelAgreement":
-                document.getElementById("textarea1").value = endpoint2 + '/v2/payments/captures/{{captureID}}/refund';
-                document.getElementById("textarea2").value = '';
-                document.getElementById("textarea3").value = 'Cancel Agreement';
-                break;
+    case "braintree":
+      document.getElementById("textarea1").value = 'Braintree';
+      document.getElementById("textarea2").value = 'Braintree';
+      document.getElementById("textarea3").value = 'Braintree';
+      break;
+        
+    case "accessToken":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/oauth2/token';
+      document.getElementById("textarea2").value = '';
+      document.getElementById("textarea3").value = 'Access Token';
+      document.getElementById("request").value = 'AccessToken';
+      break;
     
-            // Subscriptions
-            case "createProduct":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/catalogs/products';
-                document.getElementById("textarea2").value = JSON.stringify(createProduct,null,4);
-                document.getElementById("textarea3").value = 'Create Product';
-                break;
-            case "createPlan":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/billing/plans';
-                document.getElementById("textarea2").value = JSON.stringify(createPlan,null,4);
-                document.getElementById("textarea3").value = 'Create Plan';
-                break;
-            case "activatePlan":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/billing/plans/{{create_id}}/activate';
-                document.getElementById("textarea2").value = '';
-                document.getElementById("textarea3").value = 'Activate Plan';
-                break;
-            case "createSubscription":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions ';
-                document.getElementById("textarea2").value = JSON.stringify(createSubscription,null,4);
-                document.getElementById("textarea3").value = 'Create Subscription';
-                break;
-            case "activateSubscription":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/{{subscription_id}}/activate';
-                document.getElementById("textarea2").value = JSON.stringify(activateSubscription,null,4);
-                document.getElementById("textarea3").value = 'Activate Subscription';
-                break;
-            case "suspendSubscription":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/{{subscription_id}}/suspend';
-                document.getElementById("textarea2").value = JSON.stringify(suspendSubscription,null,4);
-                document.getElementById("textarea3").value = 'Suspend Subscription';
-                break;
-            case "authoriseSubscription":
-                document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/{{subscription_id}}/capture';
-                document.getElementById("textarea2").value = JSON.stringify(authoriseSubscription,null,4);
-                document.getElementById("textarea3").value = 'Authorise Subscription';
-                break;
-            default:
-                document.getElementById("textarea1").value = 'Error';
-                document.getElementById("textarea2").value = 'Error';
-                document.getElementById("textarea3").value = 'Error';
-                break;
-        }
-    }
+    // Payments
+    case "createOrder":
+      document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders';
+      document.getElementById("textarea2").value = JSON.stringify(createOrder,null,4);
+      document.getElementById("textarea3").value = 'Create Order';
+      document.getElementById("request").value = 'CreateOrder';
+      break;
+    case "showOrder":
+      document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/' + order_id;
+      document.getElementById("textarea2").value = '';
+      document.getElementById("textarea3").value = 'Show Order';
+      document.getElementById("request").value = 'ShowOrder';
+      break;
+    case "captureOrder":
+      document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/' + order_id + '/capture';
+      document.getElementById("textarea2").value = '';
+      document.getElementById("textarea3").value = 'Capture Order';
+      document.getElementById("request").value = 'CaptureOrder';
+      break;
+    case "authoriseOrder":
+      document.getElementById("textarea1").value = endpoint + '/v2/checkout/orders/' + order_id + '/authorize';
+      document.getElementById("textarea2").value = '';
+      document.getElementById("textarea3").value = 'Authorise Order';
+      document.getElementById("request").value = 'AuthoriseOrder';
+      break;
+    case "refundOrder":
+      document.getElementById("textarea1").value = endpoint + '/v2/payments/captures/' + capture_id + '/refund';
+      document.getElementById("textarea2").value = '';
+      document.getElementById("textarea3").value = 'Refund';
+      document.getElementById("request").value = 'RefundOrder';
+      break;
+
+    // Reference Transactions
+    case "createToken":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing-agreements/agreement-tokens';
+      document.getElementById("textarea2").value = JSON.stringify(createToken,null,4);
+      document.getElementById("textarea3").value = 'Create Token';
+      document.getElementById("request").value = 'CreateToken';
+      break;
+    case "showToken":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing-agreements/agreement-tokens/' + token_id;
+      document.getElementById("textarea2").value = '';
+      document.getElementById("textarea3").value = 'Show Token';
+      document.getElementById("request").value = 'ShowToken';
+      break;
+    case "createAgreement":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing-agreements/agreements';
+      document.getElementById("textarea2").value = JSON.stringify(createAgreement,null,4);
+      document.getElementById("textarea3").value = 'Create Agreement';
+      document.getElementById("request").value = 'CreateAgreement';
+      break;
+    case "showAgreement":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing-agreements/agreements/' + agreement_id;
+      document.getElementById("textarea2").value = '';
+      document.getElementById("textarea3").value = 'Show Agreement';
+      document.getElementById("request").value = 'ShowAgreement';
+      break;
+    case "cancelAgreement":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing-agreements/agreements/' + agreement_id + '/cancel';
+      document.getElementById("textarea2").value = '';
+      document.getElementById("textarea3").value = 'Cancel Agreement';
+      document.getElementById("request").value = 'CancelAgreement';
+      break;
+
+    // Subscriptions
+    case "createProduct":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/catalogs/products';
+      document.getElementById("textarea2").value = JSON.stringify(createProduct,null,4);
+      document.getElementById("textarea3").value = 'Create Product';
+      break;
+    case "createPlan":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/plans';
+      document.getElementById("textarea2").value = JSON.stringify(createPlan,null,4);
+      document.getElementById("textarea3").value = 'Create Plan';
+      break;
+    case "activatePlan":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/plans/{{create_id}}/activate';
+      document.getElementById("textarea2").value = '';
+      document.getElementById("textarea3").value = 'Activate Plan';
+      break;
+    case "createSubscription":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions ';
+      document.getElementById("textarea2").value = JSON.stringify(createSubscription,null,4);
+      document.getElementById("textarea3").value = 'Create Subscription';
+      break;
+    case "activateSubscription":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/{{subscription_id}}/activate';
+      document.getElementById("textarea2").value = JSON.stringify(activateSubscription,null,4);
+      document.getElementById("textarea3").value = 'Activate Subscription';
+      break;
+    case "suspendSubscription":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/{{subscription_id}}/suspend';
+      document.getElementById("textarea2").value = JSON.stringify(suspendSubscription,null,4);
+      document.getElementById("textarea3").value = 'Suspend Subscription';
+      break;
+    case "authoriseSubscription":
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/{{subscription_id}}/capture';
+      document.getElementById("textarea2").value = JSON.stringify(authoriseSubscription,null,4);
+      document.getElementById("textarea3").value = 'Authorise Subscription';
+      break;
+    default:
+      document.getElementById("textarea1").value = 'Error';
+      document.getElementById("textarea2").value = 'Error';
+      document.getElementById("textarea3").value = 'Error';
+      break;
+  }
+}

@@ -1,6 +1,5 @@
 <?php
 session_start();
-include 'php/access_token.php';
 include 'php/request.php'; 
 ?>
 
@@ -37,34 +36,69 @@ include 'php/request.php';
 
     <!-- Save order_id when it exists -->
     <?php 
-    if(isset($_SESSION['id']))
+    if(isset($_SESSION['order_id']))
     { ?>
-        <script>
-            var order_id = '<?php echo $_SESSION['id']; ?>';
-        </script>
+      <script>
+          var order_id = '<?php echo $_SESSION['order_id']; ?>';
+      </script>
     <?php 
     } 
     else 
     { ?>
-        <script>
-            var order_id = '{{id}}';
-        </script>
+      <script>
+          var order_id = '{{order_id}}';
+      </script>
     <?php 
     } ?>
 
+    <!-- Save capture_id when it exists -->
     <?php 
     if(isset($_SESSION['capture_id']))
     { ?>
-        <script>
-            var capture_id = '<?php echo $_SESSION['capture_id']; ?>';
-        </script>
+      <script>
+          var capture_id = '<?php echo $_SESSION['capture_id']; ?>';
+      </script>
     <?php 
     } 
     else 
     { ?>
-        <script>
-            var capture_id = '{{id}}';
-        </script>
+      <script>
+          var capture_id = '{{capture_id}}';
+      </script>
+    <?php 
+    } ?>
+
+    <!-- Save token_id when it exists -->
+    <?php 
+    if(isset($_SESSION['token_id']))
+    { ?>
+      <script>
+          var token_id = '<?php echo $_SESSION['token_id']; ?>';
+      </script>
+    <?php 
+    } 
+    else 
+    { ?>
+      <script>
+          var token_id = '{{token_id}}';
+      </script>
+    <?php 
+    } ?>
+
+    <!-- Save agreement_id when it exists -->
+    <?php 
+    if(isset($_SESSION['agreement_id']))
+    { ?>
+      <script>
+          var agreement_id = '<?php echo $_SESSION['agreement_id']; ?>';
+      </script>
+    <?php 
+    } 
+    else 
+    { ?>
+      <script>
+          var agreement_id = '{{agreement_id}}';
+      </script>
     <?php 
     } ?>
 
@@ -135,7 +169,7 @@ include 'php/request.php';
       </button>
       <div class="dropdown-container">
           <a onclick="ChangeText('createToken');">Create Token</a>
-          <a onclick="ChangeText('showDetails');">Show Details</a>
+          <a onclick="ChangeText('showToken');">Show Token</a>
           <a onclick="ChangeText('createAgreement');">Create Agreement</a>
           <a onclick="ChangeText('showAgreement');">Show Agreement</a>
           <a onclick="ChangeText('cancelAgreement');">Cancel Agreement</a>
