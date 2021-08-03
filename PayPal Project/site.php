@@ -53,10 +53,14 @@
     </button>
     <div class="dropdown-container">
       <a onclick="ChangeText('paypal');">PayPal</a>
+<<<<<<< Updated upstream
 
       
       <a href ="braintree.html"
       onclick="ChangeText('braintree');">Braintree</a>
+=======
+      <a href ="braintree.html" onclick="ChangeText('braintree');">Braintree</a>
+>>>>>>> Stashed changes
     </div>
 
 
