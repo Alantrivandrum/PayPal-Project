@@ -1,0 +1,25 @@
+{
+    "id": "P-17M15335A8501272JLXLLNKI",
+    "product_id": "PROD-5FD60555F23244316",
+    "name": "Basic Plan",
+    "status": "ACTIVE",
+    "description": "Basic plan",
+    "create_time": "2020-01-21T16:09:13Z",
+    "links": [
+        {
+            "href": "https://api-m.sandbox.paypal.com/v1/billing/plans/P-17M15335A8501272JLXLLNKI",
+            "rel": "self",
+            "method": "GET"
+        },
+        {
+            "href": "https://api-m.sandbox.paypal.com/v1/billing/plans/P-17M15335A8501272JLXLLNKI",
+            "rel": "edit",
+            "method": "PATCH"
+        },
+        {
+            "href": "https://api-m.sandbox.paypal.com/v1/billing/plans/P-17M15335A8501272JLXLLNKI/deactivate",
+            "rel": "self",
+            "method": "POST"
+        }
+    ]
+}

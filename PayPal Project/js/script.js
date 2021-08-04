@@ -1,3 +1,5 @@
+
+
 /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content
     This allows the user to have multiple dropdowns without any conflict */
     var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -17,6 +19,9 @@
     
 /****************************************************************************************************************************
 JSON Requests*/
+    var endpoint = "https://api.sandbox.paypal.com";
+    var endpoint2 = "https://api-m.sandbox.paypal.com"
+
     let createOrder = {
         "intent": "CAPTURE",
         "purchase_units": [
@@ -77,7 +82,7 @@ JSON Requests*/
       }
 
       let createPlan = {
-        "product_id": "{product_id}",
+        "product_id": product_id,
         "name": "Basic Plan",
         "description": "Basic plan",
         "billing_cycles": [
@@ -122,7 +127,7 @@ JSON Requests*/
       }
 
       let createSubscription = {
-        "plan_id": "{plan_id}"
+        "plan_id": plan_id
       }
 
       let activateSubscription = {
@@ -142,8 +147,28 @@ JSON Requests*/
         }
       }
 
-var endpoint = "https://api.sandbox.paypal.com";
-var endpoint2 = "https://api-m.sandbox.paypal.com";
+      var US = "US_Example@paypal.com";
+      var UK = "UK_Example@paypal.com";
+      var IT = "IT_Example@paypal.com";
+      var FR = "FR_Example@paypal.com";
+      var DE = "DE_Example@paypal.com";
+      var USA = "USA_Example@paypal.com";
+      
+      var Password = "Paypal1234";
+      
+      var US_secret = "EO02ZW9J0L28yMIX60g_piV4oVC4fZOFuYD2unnazkYwfAgD_7gzvKaz0t_tOEeGVam2kwvEi9wzj-sM";
+      var UK_secret = "EDT3s_07o9USWRto-UMwCbXtfxhD5aLnwdf3BTGcrNZJyUQZmBMXx17HsNgLSx-QW4Lhk3qvVcq1yVXf";
+      var IT_secret = "EEs8wAabN_lweaNT6l68X_0rxEeYsWpsnPvj5kMOPs76qm-4feQKcb2GNEoUssNuBNXNyebHDbHZAYQ6";
+      var FR_secret = "EKO8HdMuVdWrnc4Ykvgzbvf74zATbElGPUumLsUPnlSADsxih2FN2UsP051bfxdY0QfPgs1RTi-vCTfs";
+      var DE_secret = "ELVd6Bqs9dX_mW0O1p1jYytfshfYN_65FHL00ttZoLQf5qS_VAElXo__LI1F72gTIUEp0m3RTMbqRFks";
+      var USA_secret = "EMfDYU1K3KX87K7-6xpAIoBiCLZTJAy6BrzDaKCtEDeAGFuQnRqm0GMyy435xOW4UZPzpO8stJJ780wi"; 
+      
+      var US_id = "AXWuDl8_y1YTTETGLgl3g3SErMVTjVES-nDlw_lF2WXRzUHko9UyORCzwgLGHnFFH412bTfbHEqUuttg";
+      var UK_id = "AWl4x1DwG9qGhAB9lWb-N36uVxw56gpDFCSZQDL1nFLzuucUbuqae8h8yvMaIdSCdu8OxGY5rf7wdAkR";
+      var IT_id = "AV4jEvNB1uKRllj3uCO01VTOH1Ca8w-11tTKSTci8Cauz3Kh4hAdQzYePno4Culu03e82YvgSN3-LFbv";
+      var FR_id = "ATzzK4MQgY7JdYx8Iyz_OeEPYZILW5pXOpSl9q9h9Klp1SiCpxSQh-TYcsvWTESitfinScTEmJvt4JSx";
+      var DE_id = "AXejdO9Wbm1_9bxo9SiLSQmVp37AnDaucWLoChf0VPisUIB0VRxwsIEk8dDRZzRuJQxLRxKqRz7u-Dz0";
+      var USA_id = "AV0CavF54p2hxxYFQ0cuMvCo0HAUB4q0rRYOa9X8vp6xPG6u3bDUTjIj6N3hVyvDMhaXdFzmMYqE2cqD";
 
 /* Change content in textareas when clicking a certain dropdown button */
 function ChangeText(content) {
@@ -237,36 +262,74 @@ function ChangeText(content) {
       document.getElementById("textarea1").value = endpoint2 + '/v1/catalogs/products';
       document.getElementById("textarea2").value = JSON.stringify(createProduct,null,4);
       document.getElementById("textarea3").value = 'Create Product';
+      document.getElementById("request").value = 'CreateProduct';
       break;
     case "createPlan":
       document.getElementById("textarea1").value = endpoint2 + '/v1/billing/plans';
       document.getElementById("textarea2").value = JSON.stringify(createPlan,null,4);
       document.getElementById("textarea3").value = 'Create Plan';
+      document.getElementById("request").value = 'CreatePlan';
       break;
     case "activatePlan":
-      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/plans/{{create_id}}/activate';
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/plans/' + plan_id + '/activate';
       document.getElementById("textarea2").value = '';
       document.getElementById("textarea3").value = 'Activate Plan';
+      document.getElementById("request").value = 'ActivatePlan';
       break;
     case "createSubscription":
       document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions ';
       document.getElementById("textarea2").value = JSON.stringify(createSubscription,null,4);
       document.getElementById("textarea3").value = 'Create Subscription';
+      document.getElementById("request").value = 'CreateSubscription';
       break;
     case "activateSubscription":
-      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/{{subscription_id}}/activate';
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/' + sub_id + '/activate';
       document.getElementById("textarea2").value = JSON.stringify(activateSubscription,null,4);
       document.getElementById("textarea3").value = 'Activate Subscription';
+      document.getElementById("request").value = 'ActivateSubscription';
       break;
     case "suspendSubscription":
-      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/{{subscription_id}}/suspend';
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/' + sub_id + '/suspend';
       document.getElementById("textarea2").value = JSON.stringify(suspendSubscription,null,4);
       document.getElementById("textarea3").value = 'Suspend Subscription';
+      document.getElementById("request").value = 'SuspendSubscription';
       break;
     case "authoriseSubscription":
-      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/{{subscription_id}}/capture';
+      document.getElementById("textarea1").value = endpoint2 + '/v1/billing/subscriptions/' + sub_id + '/capture';
       document.getElementById("textarea2").value = JSON.stringify(authoriseSubscription,null,4);
       document.getElementById("textarea3").value = 'Authorise Subscription';
+      document.getElementById("request").value = 'AuthoriseSubscription';
+      break;
+
+    case "CRI_US":
+      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+US+ '\nPassword: '+Password+' \nClient ID: '+US_id+' \nClient Secret: '+US_secret;
+      document.getElementById("client_id").value = US_id;
+      document.getElementById("client_secret").value = US_secret;
+      break;
+    case "CRI_UK":
+      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+UK+ '\nPassword: '+Password+' \nClient ID: '+UK_id+' \nClient Secret: '+UK_secret;
+      document.getElementById("client_id").value = UK_id;
+      document.getElementById("client_secret").value = UK_secret;
+      break;
+    case "CRI_IT":
+      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+IT+ '\nPassword: '+Password+' \nClient ID: '+IT_id+' \nClient Secret: '+IT_secret;
+      document.getElementById("client_id").value = IT_id;
+      document.getElementById("client_secret").value = IT_secret;
+      break;
+    case "CRI_FR":
+      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+FR+ '\nPassword: '+Password+' \nClient ID: '+FR_id+' \nClient Secret: '+FR_secret;
+      document.getElementById("client_id").value = FR_id;
+      document.getElementById("client_secret").value = FR_secret;
+      break;
+    case "CRI_DE":
+      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+DE+ '\nPassword: '+Password+' \nClient ID: '+DE_id+' \nClient Secret: '+DE_secret;
+      document.getElementById("client_id").value = DE_id;
+      document.getElementById("client_secret").value = DE_secret;
+      break;
+    case "CRI_USA":
+      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+USA+ '\nPassword: '+Password+' \nClient ID: '+USA_id+' \nClient Secret: '+USA_secret;
+      document.getElementById("client_id").value = USA_id;
+      document.getElementById("client_secret").value = USA_secret;
       break;
     default:
       document.getElementById("textarea1").value = 'Error';
@@ -275,3 +338,45 @@ function ChangeText(content) {
       break;
   }
 }
+
+function HidetextPP(){
+  var x = document.getElementById("PayPal");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function HidetextBT(){
+  var x = document.getElementById("Braintree");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+// **************TESTING*******************
+function Hidetext(test){
+  switch(test){
+    case 'PayPal':
+      var x = document.getElementById("PayPal");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+      break;
+
+    case 'Braintree':
+      var x = document.getElementById("Braintree");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+      break;
+    }
+}
+  

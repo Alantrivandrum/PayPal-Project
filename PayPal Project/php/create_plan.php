@@ -24,19 +24,16 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
-if ($err)
-{
-  echo $err;
-}
-else
-{
+if ($err) {
+  echo "<pre>cURL Error #:" . $err . "</pre>";
+  echo $httpcode . $response;
+
+}else{
+
+
   $response = json_decode($response);
 
-  $order_id = $response->order_id;
-  $_SESSION['id'] = $order_id;
-  
-  //echo $_SESSION['id'];
-  //var_dump($response->links[1]);   
-}        
+  $plan_id = $response->id;
+  $_SESSION['plan_id'] = $plan_id;
 
-?>
+}

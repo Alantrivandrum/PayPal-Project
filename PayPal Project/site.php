@@ -17,6 +17,8 @@ include 'php/request.php';
   <link rel="icon" href="img/favicon.png" type="image/png" />
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -31,7 +33,7 @@ include 'php/request.php';
   <!-- API Endpoint and Request -->
   <div id="textarea">
     <div id="textarea4">
-      <textarea>Live credentials have been disabled:&#10;Username:&#10;Password:&#10;Signature:</textarea>
+      <textarea id="textarea5">Credentials:&#10;Client ID:&#10;Client Secret:</textarea>
     </div>
 
     <!-- Save order_id when it exists -->
@@ -102,8 +104,62 @@ include 'php/request.php';
     <?php 
     } ?>
 
+    <!-- Save product_id when it exists -->
+    <?php 
+    if(isset($_SESSION['product_id']))
+    { ?>
+      <script>
+          var product_id = '<?php echo $_SESSION['product_id']; ?>';
+      </script>
+    <?php 
+    } 
+    else 
+    { ?>
+      <script>
+          var product_id = '{{product_id}}';
+      </script>
+    <?php 
+    } ?>
+
+    <!-- Save plan_id when it exists -->
+    <?php 
+    if(isset($_SESSION['plan_id']))
+    { ?>
+      <script>
+          var plan_id = '<?php echo $_SESSION['plan_id']; ?>';
+      </script>
+    <?php 
+    } 
+    else 
+    { ?>
+      <script>
+          var plan_id = '{{plan_id}}';
+      </script>
+    <?php 
+    } ?>
+
+    <!-- Save sub_id when it exists -->
+    <?php 
+    if(isset($_SESSION['sub_id']))
+    { ?>
+      <script>
+          var sub_id = '<?php echo $_SESSION['sub_id']; ?>';
+      </script>
+    <?php 
+    } 
+    else 
+    { ?>
+      <script>
+          var sub_id = '{{sub_id}}';
+      </script>
+    <?php 
+    } ?>
+
+
     <form method="POST">
       <input type="hidden" value="" name="request_name" id="request">
+      <input type="hidden" value="" name="client_id" id="client_id">
+      <input type="hidden" value="" name="client_secret" id="client_secret">
 
       <div id="title1">
         <h2>API Endpoint</h2>
@@ -138,6 +194,9 @@ include 'php/request.php';
       ?>
     </textarea>
   </div>
+
+  <div id=textarea>
+
 
   <div class="sidenav">
     <button class="dropdown-btn">Product
@@ -188,6 +247,8 @@ include 'php/request.php';
           <a onclick="ChangeText('authoriseSubscription');">Authorise Subscription</a>
       </div>
     </div>
+
+    
     <button class="dropdown-btn">Credentials
       <i class="fa fa-caret-down"></i>
     </button>
@@ -200,10 +261,10 @@ include 'php/request.php';
       <div class="dropdown-container">
           <a onclick="ChangeText('CRI_US');">CRI-US Business Verified 3.0-DG</a>
           <a onclick="ChangeText('CRI_UK');">CRI-US Business Verified</a>
-          <a onclick="ChangeText('CRI-IT');">CRI-IT Business Verified</a>
-          <a onclick="ChangeText('CRI-FR');">CRI-FR Premier Verified</a>
-          <a onclick="ChangeText('CRI-DE');">CRI-DE Business Verified</a>
-          <a onclick="ChangeText('CRI-US');">CRI-US Airline Account</a>
+          <a onclick="ChangeText('CRI_IT');">CRI-IT Business Verified</a>
+          <a onclick="ChangeText('CRI_FR');">CRI-FR Premier Verified</a>
+          <a onclick="ChangeText('CRI_DE');">CRI-DE Business Verified</a>
+          <a onclick="ChangeText('CRI_USA');">CRI-US Airline Account</a>
       </div>
 
     <a onclick="changeText();">Search</a>
@@ -211,10 +272,9 @@ include 'php/request.php';
 
     </div>
   </div>
-
+  
   <!-- dropdown  -->
   <script src="js/script.js"></script>
-
 </body>
 
 </html>

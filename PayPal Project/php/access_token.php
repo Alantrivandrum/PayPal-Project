@@ -2,9 +2,8 @@
 
 $curl = curl_init();
 
-// Bianca's
-$clientId="AZvubSw7L5L7bnKqQ2NvOuodHa9QiZN-I63jG02dKqkoKRqrhcwjpu0loYZHCLDjR-XyIs6bo1zYSMxK";
-$secret="EHu93ip4EvuMo5XjCmVAavBuVJC2WKRPRlxI_VdLyJQYgvK9u59gCxAN3GMPo2KPmoTvepQCn_ZizBeb";
+$clientId = $_POST['client_id'];
+$secret = $_POST['client_secret'];
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => $_POST['api_endpoint'],
@@ -37,7 +36,7 @@ else
   $access_token = $response->access_token;
   $_SESSION['access_token'] = $access_token;
 
-  $response = "Access Token : " . $access_token;
+  $response = "Access Token: " . $access_token;
 }
 
 ?>

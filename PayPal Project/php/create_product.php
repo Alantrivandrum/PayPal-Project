@@ -24,19 +24,17 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
-if ($err)
-{
+if ($err) {
   echo $err;
-}
-else
-{
+}else{
+
+
   $response = json_decode($response);
 
-  $order_id = $response->order_id;
-  $_SESSION['id'] = $order_id;
-  
-  //echo $_SESSION['id'];
-  //var_dump($response->links[1]);   
-}        
+  $product_id = $response->id;
+  $_SESSION['product_id'] = $product_id;
+  //var_dump($response->links[1]);
 
-?>
+
+
+} 

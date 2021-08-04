@@ -41,6 +41,36 @@ if ($_POST)
         case "CancelAgreement":
             include "cancel_agreement.php";
             break;
+
+        // Subscriptions
+        case "CreateProduct":
+            include "create_product.php";
+            break;
+        
+        case "CreatePlan":
+            include "create_plan.php";
+            break;
+
+        case "ActivatePlan":
+            include "activate_plan.php";
+            break;
+
+        case "CreateSubscription":
+            include "create_subscription.php";
+            break;
+        
+        case "ActivateSubscription":
+            include "activate_subscription.php";
+            break;
+
+        case "SuspendSubscription":
+            include "suspend_subscription.php";
+            break;
+
+        case "AuthoriseSubscription":
+            include "authorise_subscription.php";
+            break;
+          
     }
 }
 // $api_endpoint = $response["links"][0]["href"];
