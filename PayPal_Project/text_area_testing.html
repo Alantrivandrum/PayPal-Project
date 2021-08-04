@@ -1,0 +1,43 @@
+<div class="menu_button">
+    <button id="menubutton1"
+            aria-haspopup="true"
+            aria-controls="menu1">
+      Actions
+    </button>
+    <ul id="menu1"
+        role="menu"
+        aria-labelledby="menubutton1">
+      <li role="menuitem">
+        Action 1
+      </li>
+      <li role="menuitem">
+        Action 2
+      </li>
+      <li role="menuitem">
+        Action 3
+      </li>
+      <li role="menuitem">
+        Action 4
+      </li>
+    </ul>
+  </div>
+  <p>
+    <label>
+      Last Action:
+      <input id="action_output"
+             type="text"
+             value="">
+    </label>
+  </p>
+  <script type="text/javascript">
+    document.getElementById("action_output").value = "none";
+    
+    function menuAction(event) {
+      document.getElementById("action_output").value = event.currentTarget.innerHTML;
+    }
+    
+    window.onload=function() {
+      var menubutton = new Menubutton(document.getElementById('menubutton1'));
+      menubutton.init();
+    }
+  </script>
