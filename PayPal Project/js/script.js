@@ -17,9 +17,6 @@
     
 /****************************************************************************************************************************
 JSON Requests*/
-    var endpoint = "https://api.sandbox.paypal.com";
-    var endpoint2 = "https://api-m.sandbox.paypal.com"
-
     let createOrder = {
         "intent": "CAPTURE",
         "purchase_units": [
@@ -144,6 +141,9 @@ JSON Requests*/
           "value": "100"
         }
       }
+
+var endpoint = "https://api.sandbox.paypal.com";
+var endpoint2 = "https://api-m.sandbox.paypal.com";
 
 /* Change content in textareas when clicking a certain dropdown button */
 function ChangeText(content) {
