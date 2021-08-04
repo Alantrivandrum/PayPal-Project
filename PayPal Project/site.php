@@ -24,16 +24,7 @@
     </div>
   </header>
   <h1>PayPal Testing Tool</h1>
-  <!-- Tick box code -->
-  <!---
-            <form>
-                Tick:<br>
-                <input type = "checkbox" name = "sandbox" value = "sandbox" tabindex= "1" />Sandbox <br/>
-                <input type = "checkbox" name = "live/production" value = "live/production" tabindex= "2" />Live/Production <br/>
-             </form>
-        -->
-
-
+  
   <div class="sidenav">
     <button class="dropdown-btn">Product
       <i class="fa fa-caret-down"></i>
@@ -127,7 +118,7 @@
       </div>
   </div>
   </div>
-  
+  <!-- ****************BRAINTREE TESTINGS****************** -->
     <button class="dropdown-btn">Credentials
       <i class="fa fa-caret-down"></i>
     </button>
