@@ -2,8 +2,12 @@
 
 $curl = curl_init();
 
-$clientId = $_POST['client_id'];
-$secret = $_POST['client_secret'];
+$str = str_replace("Client Secret=", "&Client Secret=", $_POST['credentials']);
+
+parse_str($str, $array);
+
+$clientId = trim($array['Client_ID']);
+$secret = trim($array['Client_Secret']);
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => $_POST['api_endpoint'],

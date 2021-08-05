@@ -17,8 +17,6 @@ include 'php/request.php';
   <link rel="icon" href="img/favicon.png" type="image/png" />
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -32,9 +30,6 @@ include 'php/request.php';
     
   <!-- API Endpoint and Request -->
   <div id="textarea">
-    <div id="textarea4">
-      <textarea id="textarea5">Credentials:&#10;Client ID:&#10;Client Secret:</textarea>
-    </div>
 
     <!-- Save order_id when it exists -->
     <?php 
@@ -158,8 +153,11 @@ include 'php/request.php';
 
     <form method="POST">
       <input type="hidden" value="" name="request_name" id="request">
-      <input type="hidden" value="" name="client_id" id="client_id">
-      <input type="hidden" value="" name="client_secret" id="client_secret">
+
+      <div id="textarea4">
+        <h2 id="title2">Credentials:</h2>
+        <textarea id="textarea5" name="credentials">Client ID=&#10;Client Secret=</textarea>
+      </div>
 
       <div id="title1">
         <h2>API Endpoint</h2>

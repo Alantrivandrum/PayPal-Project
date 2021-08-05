@@ -46,7 +46,7 @@ body {
 
 #title2 {
     color: var(--darkblue);
-    margin-top: 125px;
+    margin-top: 60px;
     text-align: center;
 }
 
@@ -74,7 +74,7 @@ body {
 #textarea4 {
     display: inline-block;
     position: fixed;
-    margin-top:120px ;
+    margin-top: 40px;
     left: 210px;
     height: 200px;
     width: 200px;

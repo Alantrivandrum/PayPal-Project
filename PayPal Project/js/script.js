@@ -146,15 +146,6 @@ JSON Requests*/
           "value": "100"
         }
       }
-
-      var US = "US_Example@paypal.com";
-      var UK = "UK_Example@paypal.com";
-      var IT = "IT_Example@paypal.com";
-      var FR = "FR_Example@paypal.com";
-      var DE = "DE_Example@paypal.com";
-      var USA = "USA_Example@paypal.com";
-      
-      var Password = "Paypal1234";
       
       var US_secret = "EO02ZW9J0L28yMIX60g_piV4oVC4fZOFuYD2unnazkYwfAgD_7gzvKaz0t_tOEeGVam2kwvEi9wzj-sM";
       var UK_secret = "EDT3s_07o9USWRto-UMwCbXtfxhD5aLnwdf3BTGcrNZJyUQZmBMXx17HsNgLSx-QW4Lhk3qvVcq1yVXf";
@@ -302,34 +293,22 @@ function ChangeText(content) {
       break;
 
     case "CRI_US":
-      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+US+ '\nPassword: '+Password+' \nClient ID: '+US_id+' \nClient Secret: '+US_secret;
-      document.getElementById("client_id").value = US_id;
-      document.getElementById("client_secret").value = US_secret;
+      document.getElementById("textarea5").value = 'Client ID= '+US_id+' \nClient Secret= '+US_secret;
       break;
     case "CRI_UK":
-      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+UK+ '\nPassword: '+Password+' \nClient ID: '+UK_id+' \nClient Secret: '+UK_secret;
-      document.getElementById("client_id").value = UK_id;
-      document.getElementById("client_secret").value = UK_secret;
+      document.getElementById("textarea5").value = 'Client ID= '+UK_id+' \nClient Secret= '+UK_secret;
       break;
     case "CRI_IT":
-      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+IT+ '\nPassword: '+Password+' \nClient ID: '+IT_id+' \nClient Secret: '+IT_secret;
-      document.getElementById("client_id").value = IT_id;
-      document.getElementById("client_secret").value = IT_secret;
+      document.getElementById("textarea5").value = 'Client ID= '+IT_id+' \nClient Secret= '+IT_secret;
       break;
     case "CRI_FR":
-      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+FR+ '\nPassword: '+Password+' \nClient ID: '+FR_id+' \nClient Secret: '+FR_secret;
-      document.getElementById("client_id").value = FR_id;
-      document.getElementById("client_secret").value = FR_secret;
+      document.getElementById("textarea5").value = 'Client ID= ' + FR_id + '\nClient Secret= ' + FR_secret;
       break;
     case "CRI_DE":
-      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+DE+ '\nPassword: '+Password+' \nClient ID: '+DE_id+' \nClient Secret: '+DE_secret;
-      document.getElementById("client_id").value = DE_id;
-      document.getElementById("client_secret").value = DE_secret;
+      document.getElementById("textarea5").value = 'Client ID= ' + DE_id + '\nClient Secret= ' + DE_secret;
       break;
     case "CRI_USA":
-      document.getElementById("textarea5").value = 'Live credentials have been disabled:\nUsername: '+USA+ '\nPassword: '+Password+' \nClient ID: '+USA_id+' \nClient Secret: '+USA_secret;
-      document.getElementById("client_id").value = USA_id;
-      document.getElementById("client_secret").value = USA_secret;
+      document.getElementById("textarea5").value = 'Client ID= ' + USA_id + '\nClient Secret= ' + USA_secret;
       break;
     default:
       document.getElementById("textarea1").value = 'Error';
