@@ -1,11 +1,11 @@
 <?php
 
-$data = $_POST["request_body"];
+$data = $_POST['request_body'];
 
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.sandbox.paypal.com/v2/checkout/orders",
+  CURLOPT_URL => $_POST['api_endpoint'],
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_SSL_VERIFYHOST => false,
   CURLOPT_SSL_VERIFYPEER => false,
@@ -24,15 +24,18 @@ $err = curl_error($curl);
 
 curl_close($curl);
 
-if ($err) {
+if ($err)
+{
   echo $err;
 }
 else
 {
   $response = json_decode($response);
 
-  $id = $response->id;
-  $_SESSION['id'] = $id;
-}
+  $order_id = $response->id;
+  $_SESSION['order_id'] = $order_id;
+  
+  //var_dump($response->links[1]);   
+}        
 
 ?>

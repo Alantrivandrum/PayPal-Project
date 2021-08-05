@@ -32,11 +32,8 @@ else
 {
   $response = json_decode($response);
 
-  $order_id = $response->order_id;
-  $_SESSION['id'] = $order_id;
-  
-  //echo $_SESSION['id'];
-  //var_dump($response->links[1]);   
+  $token_id = $response->token_id;
+  $_SESSION['token_id'] = $token_id;
 }        
 
 ?>

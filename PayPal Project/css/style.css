@@ -1,13 +1,11 @@
 
-/* CSS global variables */
-:root {
+  /* CSS global variables */
+  :root {
     --lightblue: #0094D8;
     --darkblue: #003087;
     --boxblue: #0070BA;
     --palewhite: rgba(255, 255, 255, 0.7);
 }
-
-/* CSS elements */
 
 h1 {
     text-align: center;
@@ -34,14 +32,11 @@ textarea {
     border-color: var(--boxblue);
     border-radius: 10px;
     padding-left: 10px;
-  
 }
 
 body {
     font-family: "Lato", sans-serif;
 }
-
-/* CSS ids */
 
 #title1 {
     margin-top: 10px;
@@ -51,13 +46,8 @@ body {
 
 #title2 {
     color: var(--darkblue);
-    margin-top: 10px;
+    margin-top: 60px;
     text-align: center;
-}
-
-#button {
-    display: flex;
-    justify-content: center;
 }
 
 #textarea {
@@ -65,28 +55,26 @@ body {
     justify-content: center;
 }
 
-#textarea1 {
-    width: 42em;
-    height: 1em;
-    border-radius: 10px;
-}
-
 #textarea2 {
     width: 42em;
     height: 16em;
     border-radius: 10px;
 }
-
 #textarea3 {
     width: 42em;
     height: 16em;
     border-radius: 10px;
 }
 
+#textarea1 {
+    width: 42em;
+    height: 1em;
+}
+
 #textarea4 {
     display: inline-block;
     position: fixed;
-    margin-top: 200px;
+    margin-top: 40px;
     left: 210px;
     height: 200px;
     width: 200px;
@@ -103,19 +91,16 @@ body {
     padding: 10px;
 }
 
-/* CSS classes */
-
-/* Fixed sidenav, full height */
 .sidenav {
     height: 100%;
-    width: 200px;
+    width: 100px;
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     background-image: linear-gradient(var(--lightblue), var(--darkblue));
     overflow-x: hidden;
     padding-top: 20px;
-    display: inline-block;
 }
 
 .sidenav a {
@@ -148,19 +133,17 @@ body {
     }
 }
 
-.button {
-    display: flex;
-    justify-content: center;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    background-color: var(--darkblue);
-    border: 3px solid var(--lightblue);
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
 }
 
 /* Style the sidenav links and the dropdown button */
@@ -178,6 +161,8 @@ body {
     cursor: pointer;
     outline: none;
 }
+
+ 
 
 /* On mouse-over */
 .sidenav a:hover,
