@@ -1,3 +1,9 @@
+<?php
+session_start();
+include("lib/braintree.php");
+include("php/braintree_init.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
@@ -8,6 +14,9 @@
       <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
    </head>
    <body>
+      <script>
+        var client_token = "<?php echo($gateway->ClientToken()->generate()); ?>";
+      </script>
        <!-- Button -->
     <!-- <div class="container">
         <button class="btn-1">Version 2</button>
