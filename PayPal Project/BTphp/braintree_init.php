@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+require_once ("lib/autoload.php");
 
 $environment = "sandbox";
 $merchantId = "xc46m64sjdtxj7g9";
@@ -11,5 +14,7 @@ $gateway = new Braintree\Gateway([
   'publicKey' => $publicKey,
   'privateKey' => $privateKey
 ]);
+
+// echo 'done';
 
 ?>
