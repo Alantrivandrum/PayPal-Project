@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'php/request.php'; 
+include 'php/request.php';
 ?>
 
 <!DOCTYPE html>
@@ -201,8 +201,8 @@ include 'php/request.php';
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-container">
-      <a onclick="ChangeText('paypal');">PayPal</a>
-      <a onclick="ChangeText('braintree');">Braintree</a>
+      <a href="site.php">PayPal</a>
+      <a href="braintree.php">Braintree</a>
     </div>
     <button class="dropdown-btn">Requests
       <i class="fa fa-caret-down"></i>
