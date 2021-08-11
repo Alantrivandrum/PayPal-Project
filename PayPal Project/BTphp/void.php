@@ -2,8 +2,10 @@
 require_once ("braintree_init.php");
 require_once ('lib/Braintree.php');
 
-$result = $gateway->transaction()->void($_SESSION['transaction_id']);
+$transaction_id = $_SESSION['transaction_id'];
 
-echo $result;
+$result = $gateway->transaction()->void($transaction_id);
+
+// echo $result;
 
 ?>
