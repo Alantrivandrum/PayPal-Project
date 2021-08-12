@@ -16,6 +16,21 @@
             }
         });
     }
+
+    var subdropdown = document.getElementsByClassName("subdropdown-btn");
+    var i;
+    
+    for (i = 0; i < subdropdown.length; i++) {
+        subdropdown[i].addEventListener("click", function () {
+            this.classList.toggle("subactive");
+            var subdropdownContent = this.nextElementSibling;
+            if (subdropdownContent.style.display === "block") {
+                subdropdownContent.style.display = "none";
+            } else {
+                subdropdownContent.style.display = "block";
+            }
+        });
+    }
     
 /****************************************************************************************************************************
 JSON Requests*/
