@@ -25,53 +25,54 @@ include 'php/request.php';
       <div id=logo>
         <img id="logo_image" src="img/logo.png"></img>
       </div>
+      <h1>PayPal Testing Tool</h1>
     </header>
-
-    <h1>PayPal Testing Tool</h1>
       
     <!-- API Endpoint and Request -->
-    <div id="textarea">
-      <form method="POST">
-        <input type="hidden" value="" name="request_name" id="request">
+    <form method="POST">
+      <input type="hidden" value="" name="request_name" id="request">
 
-        <div id="textarea4">
-          <h2 id="title2">Credentials:</h2>
-          <textarea id="textarea5" name="credentials">Client ID=&#10;Client Secret=</textarea>
-        </div>
+      <div id="textarea4">
+        <h2 id="title2">Credentials:</h2>
+        <textarea id="textarea5" name="credentials">Client ID =&#10;Client Secret =</textarea>
+      </div>
 
+      <div id="textarea">
         <div id="title1">
           <h2>API Endpoint</h2>
         </div>
-        <textarea id="textarea1" name="api_endpoint">API Endpoint</textarea>
+        <textarea id="textarea1" name="api_endpoint" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'>API Endpoint</textarea>
 
         <div id="title1">
           <h2>Request Body</h2>
         </div>
         <textarea id="textarea2" name="request_body">Request Body</textarea>
 
-        <div>
-          <input type="submit" value="Submit" />
+        <div id="button">
+          <div id="button-colour">
+            <input type="submit" placeholder="Submit"/>
+          </div>
         </div>
-      </form>
-    </div>
-      
-    <!-- Response -->
-    <div id="title2">
-      <h2>Response Body</h2>
-    </div>
-    <div id="textarea">
-      <textarea id="textarea3"><?php 
-        if($_POST) 
-        {
-          print_r($response);
-        } 
-        else
-        {  
-          echo "Response Body";
-        }
-        ?>
-      </textarea>
-    </div>
+
+        <!-- Response -->
+        <div id="textarea">
+          <div id="title2">
+            <h2>Response Body</h2>
+          </div>
+          <textarea id="textarea3"><?php 
+            if($_POST) 
+            {
+              print_r($response);
+            } 
+            else
+            {  
+              echo "Response Body";
+            }
+            ?>
+          </textarea>
+        </div>
+      </div>
+    </form>
   </div>
 
   <!-- Save order_id when it exists -->

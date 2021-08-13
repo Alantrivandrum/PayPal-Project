@@ -1,23 +1,33 @@
 
-  /* CSS global variables */
-  :root {
+/* CSS global variables */
+:root {
     --lightblue: #0094D8;
     --darkblue: #003087;
     --boxblue: #0070BA;
     --palewhite: rgba(255, 255, 255, 0.7);
+    --yellow: #FFCC00;
 }
 
 h1 {
     text-align: center;
-    color: var(--boxblue);
+    color: var(--darkblue);
 }
 
 p {
     text-align: center;
 }
 
-form{
-    text-align: center;
+input {
+    width: 20rem;
+    height: 3rem;
+    margin-top: 2.5px;
+    border: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-image: linear-gradient(-90deg, var(--darkblue), var(--lightblue));
+    background-size: 51%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
 select {
@@ -25,8 +35,6 @@ select {
 }
 
 textarea {
-    width: 420px;
-    height: 120px;
     border-width: 2px;
     border-style: solid;
     border-color: var(--boxblue);
@@ -38,8 +46,10 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-#content {
-    margin-left: 200px;
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 10%;
 }
 
 #title1 {
@@ -50,19 +60,18 @@ body {
 
 #title2 {
     color: var(--darkblue);
-    margin-top: 60px;
+    margin-top: 15px;
     text-align: center;
 }
 
 #textarea {
-    display: flex;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #textarea1 {
-    width: fit-content;
     height: 2em;
-    min-width: 50em;
+    width: 50em;
 }
 
 #textarea2 {
@@ -70,6 +79,7 @@ body {
     height: 16em;
     border-radius: 10px;
 }
+
 #textarea3 {
     width: 50em;
     height: 16em;
@@ -77,10 +87,27 @@ body {
 }
 
 #textarea4 {
-    margin-top: 40px;
-    left: 0;
-    height: 200px;
-    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#textarea5 {
+    width: 25em;
+    height: 16em;
+    border-radius: 10px;
+}
+
+#button {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+#button-colour {
+    background: var(--yellow);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 5px;
 }
 
 #logo {

@@ -2,7 +2,8 @@
 
 $curl = curl_init();
 
-$str = str_replace("Client Secret=", "&Client Secret=", $_POST['credentials']);
+$str = str_replace("Client ID =", "Client ID=", $_POST['credentials']);
+$str = str_replace("Client Secret =", "&Client Secret=", $str);
 
 parse_str($str, $array);
 
