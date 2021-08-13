@@ -31,7 +31,10 @@
             }
         });
     }
-    
+
+  /* Content div responsiveness */
+  document.getElementById('content').style.marginLeft = document.querySelector('.sidenav').offsetWidth.toString() + "px";
+
 /****************************************************************************************************************************
 JSON Requests*/
     var endpoint = "https://api.sandbox.paypal.com";
@@ -308,22 +311,22 @@ function ChangeText(content) {
       break;
 
     case "CRI_US":
-      document.getElementById("textarea5").value = 'Client ID= '+US_id+' \nClient Secret= '+US_secret;
+      document.getElementById("textarea5").value = 'Client ID = '+US_id+' \nClient Secret = '+US_secret;
       break;
     case "CRI_UK":
-      document.getElementById("textarea5").value = 'Client ID= '+UK_id+' \nClient Secret= '+UK_secret;
+      document.getElementById("textarea5").value = 'Client ID = '+UK_id+' \nClient Secret = '+UK_secret;
       break;
     case "CRI_IT":
-      document.getElementById("textarea5").value = 'Client ID= '+IT_id+' \nClient Secret= '+IT_secret;
+      document.getElementById("textarea5").value = 'Client ID = '+IT_id+' \nClient Secret = '+IT_secret;
       break;
     case "CRI_FR":
-      document.getElementById("textarea5").value = 'Client ID= ' + FR_id + '\nClient Secret= ' + FR_secret;
+      document.getElementById("textarea5").value = 'Client ID = ' + FR_id + '\nClient Secret = ' + FR_secret;
       break;
     case "CRI_DE":
-      document.getElementById("textarea5").value = 'Client ID= ' + DE_id + '\nClient Secret= ' + DE_secret;
+      document.getElementById("textarea5").value = 'Client ID = ' + DE_id + '\nClient Secret = ' + DE_secret;
       break;
     case "CRI_USA":
-      document.getElementById("textarea5").value = 'Client ID= ' + USA_id + '\nClient Secret= ' + USA_secret;
+      document.getElementById("textarea5").value = 'Client ID = ' + USA_id + '\nClient Secret = ' + USA_secret;
       break;
     default:
       document.getElementById("textarea1").value = 'Error';
