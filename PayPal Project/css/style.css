@@ -1,23 +1,33 @@
 
-  /* CSS global variables */
-  :root {
+/* CSS global variables */
+:root {
     --lightblue: #0094D8;
     --darkblue: #003087;
     --boxblue: #0070BA;
     --palewhite: rgba(255, 255, 255, 0.7);
+    --yellow: #FFCC00;
 }
 
 h1 {
     text-align: center;
-    color: var(--boxblue);
+    color: var(--darkblue);
 }
 
 p {
     text-align: center;
 }
 
-form{
-    text-align: center;
+input {
+    width: 20rem;
+    height: 3rem;
+    margin-top: 2.5px;
+    border: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-image: linear-gradient(-90deg, var(--darkblue), var(--lightblue));
+    background-size: 51%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
 }
 
 select {
@@ -25,8 +35,6 @@ select {
 }
 
 textarea {
-    width: 420px;
-    height: 120px;
     border-width: 2px;
     border-style: solid;
     border-color: var(--boxblue);
@@ -38,6 +46,12 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 10%;
+}
+
 #title1 {
     margin-top: 10px;
     color: var(--lightblue);
@@ -46,38 +60,54 @@ body {
 
 #title2 {
     color: var(--darkblue);
-    margin-top: 60px;
+    margin-top: 15px;
     text-align: center;
 }
 
 #textarea {
-    display: flex;
-    justify-content: center;
-}
-
-#textarea2 {
-    width: 42em;
-    height: 16em;
-    border-radius: 10px;
-}
-#textarea3 {
-    width: 42em;
-    height: 16em;
-    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #textarea1 {
-    width: 42em;
-    height: 1em;
+    height: 2em;
+    width: 50em;
+}
+
+#textarea2 {
+    width: 50em;
+    height: 16em;
+    border-radius: 10px;
+}
+
+#textarea3 {
+    width: 50em;
+    height: 16em;
+    border-radius: 10px;
 }
 
 #textarea4 {
-    display: inline-block;
-    position: fixed;
-    margin-top: 40px;
-    left: 210px;
-    height: 200px;
-    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#textarea5 {
+    width: 25em;
+    height: 16em;
+    border-radius: 10px;
+}
+
+#button {
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+#button-colour {
+    background: var(--yellow);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 5px;
 }
 
 #logo {
@@ -93,7 +123,8 @@ body {
 
 .sidenav {
     height: 100%;
-    width: 100px;
+    width: fit-content;
+    min-width: 250px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -103,53 +134,13 @@ body {
     padding-top: 20px;
 }
 
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    display: block;
-}
-
 .sidenav a:hover {
     color: white;
 }
 
-.main {
-    margin-left: 100px;
-    /* Same as the width of the sidenav */
-    font-size: 28px;
-    /* Increased text to enable scrolling */
-    padding: 0px 10px;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-    .sidenav a {
-        font-size: 18px;
-    }
-}
-
-/* Fixed sidenav, full height */
-.sidenav {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-/* Style the sidenav links and the dropdown button */
-.sidenav a,
-.dropdown-btn {
-    padding: 6px 8px 6px 16px;
+/* Style the sidenav links and the first dropdown button */
+.sidenav a{
+    padding: 14px 8px 12px 16px;
     text-decoration: none;
     font-size: 20px;
     color: var(--palewhite);
@@ -161,41 +152,82 @@ body {
     cursor: pointer;
     outline: none;
 }
+.dropdown-btn {
+    padding: 14px 8px 12px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--palewhite);
+    display: block;
+    border-bottom: 1px var(--palewhite) solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
 
- 
-
-/* On mouse-over */
 .sidenav a:hover,
 .dropdown-btn:hover {
     color: white;
 }
 
-/* Main content */
-.main {
-    margin-left: 200px;
-    /* Same as the width of the sidenav */
-    font-size: 20px;
-    /* Increased text to enable scrolling */
-    padding: 0px 0px;
+.active {
+    color: white;
+    font-size: 25px;
 }
 
-/* Add an active class to the active dropdown button */
-.active {
-    background-color: var(--darkblue);
+/* Second dropdown */
+.subdropdown-btn{
+    padding: 14px 8px 12px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--palewhite);
+    display: block;
+    border-bottom: 1px var(--palewhite) solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.subdropdown-btn:hover {
     color: white;
+}
+
+.subactive {
+    color: white;
+    font-size: 22px;
+}
+
+/* API Calls */
+#links {
+    border-bottom: none;
 }
 
 /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 .dropdown-container {
     display: none;
-    background-image: linear-gradient(var(--darkblue), var(--lightblue));
-    padding-left: 8px;
+    background-image: transparent;
+    padding-left: 15px;
+    padding-bottom: 8px;
 }
 
 /* Optional: Style the caret down icon */
 .fa-caret-down {
     float: right;
+    padding-left: 8px;
     padding-right: 8px;
+}
+
+#sub-fa-caret {
+    font-size: 20px;
 }
 
 /* Some media queries for responsiveness */
@@ -207,4 +239,24 @@ body {
     .sidenav a {
         font-size: 18px;
     }
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--palewhite);
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: white;
 }
