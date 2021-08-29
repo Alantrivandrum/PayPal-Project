@@ -28,3 +28,5 @@ $gateway = new Braintree\Gateway([
 ]);
 
 $response = $gateway;
+
+?>
